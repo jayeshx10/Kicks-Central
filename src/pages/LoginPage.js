@@ -28,23 +28,35 @@ export const LoginPage = () => {
   return (
     <form className="form-container" onSubmit={submitHandler}>
       <h2 className="login-page-h2">Sign In</h2>
-      <label className="labels" for="email">
+      <label className="labels" htmlFor="email">
         Email Address:{" "}
       </label>
       <input
         className="inputs"
         type="text"
         name="input-email"
+        onChange={(e) =>
+          setUserCredentials((prevState) => ({
+            ...prevState,
+            email: e.target.value,
+          }))
+        }
         placeholder="shawn@gmail.com"
         required
       />
-      <label className="labels" for="password">
+      <label className="labels" htmlFor="password">
         Password:{" "}
       </label>
       <input
         className="inputs"
         type="text"
         name="input-password"
+        onChange={(e) =>
+          setUserCredentials((prevState) => ({
+            ...prevState,
+            password: e.target.value,
+          }))
+        }
         placeholder="•••••••••"
         required
       />

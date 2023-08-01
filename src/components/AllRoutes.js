@@ -1,7 +1,8 @@
-//import { useState } from "react";
+import { useContext } from "react";
 import { Route, Routes } from "react-router-dom";
 import Mockman from "mockman-js";
 
+import { AuthContext } from "contexts/AuthContext";
 import { RequiresAuth } from "components/RequiresAuth";
 import { Signup } from "pages/Signup";
 import { LoginPage } from "pages/LoginPage";
@@ -13,7 +14,8 @@ import ProductsListingPage from "pages/ProductsListingPage";
 import { Home } from "pages/Home";
 
 export const AllRoutes = () => {
-  const isLoggedIn = false;
+  //const isLoggedIn = false;
+  const { token, currUser } = useContext(AuthContext);
   return (
     <div>
       <Routes>
@@ -27,7 +29,7 @@ export const AllRoutes = () => {
         <Route
           path="/wishlist"
           element={
-            <RequiresAuth isLoggedIn={isLoggedIn}>
+            <RequiresAuth token={token}>
               <Wishlist />
             </RequiresAuth>
           }
@@ -35,7 +37,7 @@ export const AllRoutes = () => {
         <Route
           path="/cart"
           element={
-            <RequiresAuth isLoggedIn={isLoggedIn}>
+            <RequiresAuth token={token}>
               <Cart />
             </RequiresAuth>
           }

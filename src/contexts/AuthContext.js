@@ -1,27 +1,31 @@
 import React from "react";
 import { useState, createContext } from "react";
-import { loginUser } from "services/services.js";
+import { loginUserService } from "services/services.js";
 
 export const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
-  const localStorageToken = JSON.parse(localStorage.getItem("loginItems"));
+  const localStorageToken = JSON.parse(localStorage.getItem("loginDetails"));
   const [token, setToken] = useState(localStorageToken?.token);
   const [currUser, setCurrUser] = useState(localStorageToken?.user);
 
   const loginHandler = async (loginData) => {
+    const { email, password } = loginData;
     try {
+      const response = await loginUserService(loginData);
       const {
         data: { foundUser, encodedToken },
-        statusCode,
-      } = await loginUser(loginData);
-      if (statusCode === 200 || statusCode === 201) {
+        status,
+      } = response;
+      console.log(foundUser.cart);
+
+      if (status === 200 || status === 201) {
         localStorage.setItem(
-          "loginItems",
-          JSON.stringify({ token: encodedToken, user: foundUser })
+          "loginDetails",
+          JSON.stringify({ user: foundUser, token: encodedToken })
         );
-        setCurrUser(foundUser);
         setToken(encodedToken);
+        setCurrUser(foundUser);
       }
     } catch (error) {
       console.log(error);
