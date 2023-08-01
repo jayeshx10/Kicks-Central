@@ -1,0 +1,50 @@
+.productPage-main-container{
+    margin: 0 5rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.productPage-div-left{
+    width: 40%;
+}
+
+.productPage-div-right{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+}
+
+.p-brand-name{
+    font-size: 22px;
+}
+
+.span-name{
+    font-size: 32.5px;
+    font-weight: 600;
+}
+
+.p-price{
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0.5rem 0 0 0;
+}
+
+.btns-product-page{
+    display: flex;
+}
+
+.btn-add{
+    font-size: 16px;
+    background-color: black;
+    border: 2px solid white;
+    color: white;
+    padding: 0.5rem;
+    height: 3rem;
+    width: 50%;
+    margin: 1rem 0;
+}
+
+.btn-disabled{
+    opacity: 0.3;
+}

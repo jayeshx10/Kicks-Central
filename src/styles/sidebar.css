@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar-div {
+    border: 2px solid black;
+    width: 12vw;
+    height: 50vh;
+    padding: 1rem;
+    margin: 1rem 1.5rem;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.sidebar-div-1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-clearAll{
+    background-color: rgba(192, 192, 192, 0.25);
+    border-radius: 0.5rem;
+    padding: 0.4rem;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.radio-labels{
+    cursor: pointer;
+}
+
+.span-clearAll{
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.p-sidebar-filters{
+    font-weight: 700;
+}
+
+.price-radio-btns {
+    display: flex;
+    flex-direction: column;
+}
+
+.slider-container {
+    width: 300px;
+    margin: 20px;
+}
+
+.category-checkboxes {
+    display: flex;
+    flex-direction: column;
+}
+
+.slider {
+    width: 50%;
+    margin: 0.5rem;
+}
+
+.checkbox-labels{
+    cursor: pointer;
+}
+
+.checkbox-category{
+    margin: 0.5rem 0.5rem 0 0;
+}

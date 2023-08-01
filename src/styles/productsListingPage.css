@@ -1,0 +1,14 @@
+.product-listing-main-div {
+    display: flex;
+}
+
+.all-products {
+    border: 2px solid white;
+}
+
+.product-cards-ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding:  0 0.5rem;
+}

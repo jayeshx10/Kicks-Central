@@ -1,0 +1,53 @@
+.main-container {
+    border: 2px solid black;
+    width: 25%;
+    margin: 5rem auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-h2 {
+    text-align: center;
+    margin: 0.5rem auto;
+}
+
+.labels { 
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0.3rem 0;
+}
+
+.inputs {
+    height: 30px;
+    width: 95%;
+    padding: 0 0 0 5px;
+    border: 2px solid black;
+}
+
+.btn-new-acc {
+    font-size: 14px;
+    background-color: black;
+    border: 2px solid white;
+    color: white;
+    padding: 0.5rem;
+    height: 40px;
+    width: 96%;
+    margin: 0 0 5px 0;
+
+    transition-duration: 400ms;
+}
+
+.btn-new-acc:hover {
+    font-size: 14px;
+    background-color: white;
+    border: 2px solid black;
+    color: black;
+    padding: 0.5rem;
+    height: 40px;
+    width: 96%;
+}
+
+.link-login {
+    text-decoration: none;
+}

@@ -1,0 +1,20 @@
+.wishlist-container{
+    border: 2px solid black;
+    padding: 0.5rem;
+}
+
+.wishlist-li{
+    border: 2px solid blue;
+    width: 50%;
+    display: flex;
+}
+
+.img-wishlist{
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+}
+
+.wishlist-li-right{
+    border: 2px solid red;
+}

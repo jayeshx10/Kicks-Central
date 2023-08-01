@@ -1,0 +1,58 @@
+.header-div {
+    /* border: 2px solid black; */
+}
+
+.header-div-1 {
+    /* border: 2px solid red; */
+    height: 10vh;
+    width: auto;
+    padding: 0.6rem 0 0 1rem;
+
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.header-div-2 {
+    text-align: center;
+}
+
+.header-div-1-1 {
+    /* border: 2px solid blue; */
+    width: 30%;
+}
+
+.header-div-1-2 {
+    /* border: 2px solid black; */
+    height: 50%;
+    width: 90%;
+    margin: 0.5rem 2rem 0 40rem;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.input-search {
+    width: 20rem;
+    border-radius: 0.5rem;
+    height: 80%;
+
+}
+
+.btn-icons {
+    margin: 0 0.1rem;
+    background-color: white;
+    border: none;
+
+}
+
+.header-links {
+    text-decoration: none;
+    color: black;
+}
+
+.header-links-span {
+    font-weight: 700;
+    font-size: large;
+    margin: 0 3rem;
+}

@@ -1,0 +1,17 @@
+.btn-about{
+    background-color: white;
+    border: none;
+}
+
+.about-product{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.about-card{
+    font-size: 19px;
+    margin-top: 1rem;
+}
