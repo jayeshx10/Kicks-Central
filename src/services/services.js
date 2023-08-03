@@ -26,3 +26,41 @@ export const getCartDataService = async (encodedToken) => {
     },
   });
 };
+
+export const addProductService = async (encodedToken, type, product) => {
+  const apiEndpoint = `/api/user/${type}`;
+  return axios.post(
+    apiEndpoint,
+    { product },
+    {
+      headers: {
+        authorization: encodedToken,
+      },
+    }
+  );
+};
+
+export const removeProductService = async (encodedToken, type, productID) => {
+  const apiEndpoint = `/api/user/${type}/${productID}`;
+  return axios.delete(apiEndpoint, {
+    headers: {
+      authorization: encodedToken,
+    },
+  });
+};
+
+export const handleQuantityService = async (encodedToken, type, productID) => {
+  return axios.post(
+    `/api/user/cart/${productID}`,
+    {
+      action: {
+        type: type,
+      },
+    },
+    {
+      headers: {
+        authorization: encodedToken,
+      },
+    }
+  );
+};

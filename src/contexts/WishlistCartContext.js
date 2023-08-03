@@ -1,31 +1,112 @@
 import React from "react";
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useContext } from "react";
+import { AuthContext } from "contexts/AuthContext";
+import {
+  getWishlistDataService,
+  getCartDataService,
+  addProductService,
+  removeProductService,
+  handleQuantityService,
+} from "services/services.js";
 
 export const WishlistCartContext = createContext();
 
 export const WishlistCartContextProvider = ({ children }) => {
+  const { token } = useContext(AuthContext);
+
   const [wishlistData, setWishlistData] = useState([]);
   const [cartData, setCartData] = useState([]);
 
-  const addProduct = (type, product) => {
-    if (type === "wishlist") {
-      setWishlistData((prevState) => [...prevState, product]);
-    } else {
-      setCartData((prevState) => [...prevState, product]);
+  const getWishlistData = async () => {
+    try {
+      const {
+        data: { wishlist },
+        status,
+      } = await getWishlistDataService(token);
+
+      if (status === 200 || status === 201) {
+        setWishlistData(wishlist);
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
-  const removeProduct = (type, targetID) => {
+  const getCartData = async () => {
+    try {
+      const {
+        data: { cart },
+        status,
+      } = await getCartDataService(token);
+
+      if (status === 200 || status === 201) {
+        setCartData(cart);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    if (token) {
+      getWishlistData();
+      getCartData();
+    }
+  }, []);
+
+  const addProduct = async (type, product) => {
     if (type === "wishlist") {
-      const newWishlistData = wishlistData.filter(
-        (product) => product._id !== targetID
-      );
-      setWishlistData(newWishlistData);
-    } else {
-      const newCartData = cartData.filter(
-        (product) => product._id !== targetID
-      );
-      setCartData(newCartData);
+      try {
+        const {
+          data: { wishlist },
+          status,
+        } = await addProductService(token, type, product);
+        if (status === 200 || status === 201) {
+          setWishlistData(wishlist);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    } else if (type === "cart") {
+      try {
+        const {
+          data: { cart },
+          status,
+        } = await addProductService(token, type, product);
+        if (status === 200 || status === 201) {
+          setCartData(cart);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  };
+
+  const removeProduct = async (type, targetID) => {
+    if (type === "wishlist") {
+      try {
+        const {
+          data: { wishlist },
+          status,
+        } = await removeProductService(token, type, targetID);
+        if (status === 200 || status === 201) {
+          setWishlistData(wishlist);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    } else if (type === "cart") {
+      try {
+        const {
+          data: { cart },
+          status,
+        } = await removeProductService(token, type, targetID);
+        if (status === 200 || status === 201) {
+          setCartData(cart);
+        }
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
 
@@ -33,17 +114,37 @@ export const WishlistCartContextProvider = ({ children }) => {
     const { _id } = product;
     if (type === "wishlist_to_cart") {
       //WISHLIST ---> CART
-      //STEP 1: Add to cart
       addProduct("cart", product);
-      //STEP 2: Remove from wishlist
       removeProduct("wishlist", _id);
-    } else {
+    } else if (type === "cart_to_wishlist") {
       //CART ---> WISHLIST
-      //STEP 1: add to wishlist
       addProduct("wishlist", product);
-      //STEP 2: remove from cart
       removeProduct("cart", _id);
     }
+  };
+
+  const handleQuantity = (type, productID) => {
+    // try {
+    //   const {
+    //     data: { cart },
+    //     status,
+    //   } = await handleQuantityService(token, type, productID);
+    //   if (status === 200 || status === 201) {
+    //     console.log(cart);
+    //     setCartData(cart);
+    //   }
+    // } catch (error) {
+    //   console.log(error);
+    // }
+    console.log(productID);
+    const updatedCart = [...cartData].map((product) => {
+      return product._id === productID
+        ? type === "increment"
+          ? { ...product, quantity: product.quantity + 1 }
+          : { ...product, quantity: product.quantity - 1 }
+        : product; 
+    });
+    setCartData(updatedCart);
   };
 
   return (
@@ -54,6 +155,7 @@ export const WishlistCartContextProvider = ({ children }) => {
         addProduct,
         removeProduct,
         moveProduct,
+        handleQuantity,
       }}
     >
       {children}
