@@ -1,0 +1,2 @@
+export const kicksCentralIcon =
+  "https://s3-alpha-sig.figma.com/img/7aca/68a1/220e5e8ed284afbe59f02f5d2806eb8e?Expires=1691971200&Signature=H0TMXwUbIc75N-C43hJ4uZZkiIJFj1HrP21MIcHy9ISoIsyf~GylJY9DLOYHgOiSj47lGsyjHo8WlU2TyWyXeYL-tQPyz3qCLFU6TZAEGWKO6Wz1k3copzW0x0xnLb5Yk9M0M-jvaFM-CT~Bic2Ukc0M2mg5x-C4fj8UsmWPaWvx7N6ti~nDLrl5d1EeZxI~N03Vy7f28qs~XH676Ywbq4fmqOam7VO62KBoMnF-pnr0S0HU4sJigTspyiHYosHJ5Vv2t00R9EyoinnLRT45vpQ46kzcxTt-65C1F-MZ-i88EV0kva-E5g1iJyFGCSJ08-YxtYyq3BRguCmTvdP3DA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4";
