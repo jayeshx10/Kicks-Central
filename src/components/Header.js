@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 
+import { WishlistIcon, CartIcon, UserIcon } from "Images/Icons";
+import { kicksCentralIcon } from "Images/ImagesLinks.js";
 import { ProductsContext } from "contexts/ProductsContext";
 import "styles/headerStyles.css";
 
@@ -8,99 +10,58 @@ export const Header = () => {
   const { dispatch } = useContext(ProductsContext);
 
   return (
-    <div className="header-div">
-      <div className="header-div-1">
-        <h1 className="header-div-1-1">
-          <Link to="/" className="links-styling">
-            KicksCentral
-          </Link>
-        </h1>
-
-        <div className="header-div-1-2">
+    <div className="header">
+      <div className="header__container-1">
+        <Link to="/" className="links-styling">
+          <img src={kicksCentralIcon} className="img-kicksCentral" />
+        </Link>
+        <div className="header__navbar">
           <input
             type="text"
-            placeholder="  Search"
-            className="input-search"
+            placeholder="    Search"
+            className="header__input-search"
             onChange={(e) =>
               dispatch({ type: "searchedKeyword", payload: e.target.value })
             }
           />
-          <div>
-            <Link to="/wishlist" className="links-styling">
-              <button className="btn-icons">
-                <img
-                  src="https://img.icons8.com/?size=512&id=87&format=png"
-                  alt="wishlist-icon"
-                  height="30"
-                />
-              </button>
-            </Link>
-            <img
-              src="https://img.icons8.com/?size=512&id=120588&format=png"
-              alt="breakline"
-              height="30"
-            />
-            <Link to="/cart" className="links-styling">
-              <button className="btn-icons">
-                <img
-                  src="https://img.icons8.com/?size=512&id=3686&format=png"
-                  alt="shopping-bag-icon"
-                  height="30"
-                />
-              </button>
-            </Link>
-            <img
-              src="https://img.icons8.com/?size=512&id=120588&format=png"
-              alt="breakline"
-              height="30"
-            />
-            <Link to="/user" className="links-styling">
-              <button className="btn-icons">
-                <img
-                  src="https://img.icons8.com/?size=512&id=23264&format=png"
-                  alt="user-icon"
-                  height="30"
-                />
-              </button>
-            </Link>
-            <img
-              src="https://img.icons8.com/?size=512&id=120588&format=png"
-              alt="breakline"
-              height="30"
-            />
-            <Link to="/login" className="links-styling">
-              <button className="btn-icons">
-                <img
-                  src="https://img.icons8.com/?size=512&id=RdpDW3Vxtzg3&format=png"
-                  alt="login-icon"
-                  height="30"
-                />
-              </button>
-            </Link>
-          </div>
+          <Link to="/wishlist" className="links-styling">
+            <button className="btn-icons">
+              <WishlistIcon />
+            </button>
+          </Link>
+          <Link to="/cart" className="links-styling">
+            <button className="btn-icons">
+              <CartIcon />
+            </button>
+          </Link>
+          <Link to="/user" className="links-styling">
+            <button className="btn-icons">
+              <UserIcon />
+            </button>
+          </Link>
         </div>
       </div>
-      <nav className="header-div-2">
-        <Link to="/products" className="header-links">
-          <span className="header-links-span">All Products</span>
+      <nav className="header__container-2">
+        <Link to="/products" className="header__links">
+          <span className="header__span">All Products</span>
         </Link>
-        <Link to="/products/sneakers" className="header-links">
-          <span className="header-links-span">Sneakers</span>
+        <Link to="/products/sneakers" className="header__links">
+          <span className="header__span">Sneakers</span>
         </Link>
-        <Link className="header-links">
-          <span className="header-links-span">Basketball</span>
+        <Link className="header__links">
+          <span className="header__span">Basketball</span>
         </Link>
-        <Link className="header-links">
-          <span className="header-links-span">Classics</span>
+        <Link className="header__links">
+          <span className="header__span">Classics</span>
         </Link>
-        <Link className="header-links">
-          <span className="header-links-span">Skateboard</span>
+        <Link className="header__links">
+          <span className="header__span">Skateboard</span>
         </Link>
-        <Link className="header-links">
-          <span className="header-links-span">Slides</span>
+        <Link className="header__links">
+          <span className="header__span">Slides</span>
         </Link>
-        <Link className="header-links">
-          <span className="header-links-span">Sandals</span>
+        <Link className="header__links">
+          <span className="header__span">Sandals</span>
         </Link>
       </nav>
     </div>

@@ -124,25 +124,13 @@ export const WishlistCartContextProvider = ({ children }) => {
   };
 
   const handleQuantity = (type, productID) => {
-    // try {
-    //   const {
-    //     data: { cart },
-    //     status,
-    //   } = await handleQuantityService(token, type, productID);
-    //   if (status === 200 || status === 201) {
-    //     console.log(cart);
-    //     setCartData(cart);
-    //   }
-    // } catch (error) {
-    //   console.log(error);
-    // }
     console.log(productID);
     const updatedCart = [...cartData].map((product) => {
       return product._id === productID
         ? type === "increment"
           ? { ...product, quantity: product.quantity + 1 }
           : { ...product, quantity: product.quantity - 1 }
-        : product; 
+        : product;
     });
     setCartData(updatedCart);
   };
