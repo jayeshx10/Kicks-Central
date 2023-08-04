@@ -59,6 +59,7 @@
 .slider {
     width: 50%;
     margin: 0.5rem;
+    cursor: pointer;
 }
 
 .checkbox-labels{

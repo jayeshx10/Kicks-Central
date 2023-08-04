@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
 
-.img-kicksCentral{
+.logo-kicksCentral{
     height: 82.716px;
     width: 183px;
 }
@@ -20,7 +20,7 @@
 
 .header__container-2 {
     text-align: center;
-    margin-top: 50px;
+    margin: 40px;
 }
 
 .header__input-search {
@@ -35,7 +35,7 @@
     margin: 0 0.1rem;
     background-color: white;
     border: none;
-
+    cursor: pointer;
 }
 
 .header__links {
