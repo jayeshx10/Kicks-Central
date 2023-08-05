@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import { Footer } from "components/Footer";
 import { ListItemCard } from "components/ListItemCard";
 import "styles/home.css";
 import {
@@ -138,6 +139,7 @@ export const Home = () => {
         <ListItemCard imgUrl={aeroTech} title="AeroTech" type="Sneakers" />
         <ListItemCard imgUrl={techGrip} title="TechGrip" type="Sneakers" />
       </ul>
+      <Footer />
     </div>
   );
 };

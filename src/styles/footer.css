@@ -1,0 +1,105 @@
+.footer{
+    /* display: flex;
+    flex-direction: column; */
+    /* margin-top: 40px; */
+    width: 98vw;
+    margin: 40px auto;
+    margin-bottom: 0;
+}
+
+.footer__container-1{
+    height: 84px;
+    width: 100%;
+    margin: auto;
+    background-color: #7C809B;
+    color: #FFFFFF;
+    font-family: "Bona Nova", sans-serif;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    
+    & p{
+        font-size: 43px;
+    }
+
+    & button{
+        font-size: 25px;
+        border: none;
+        background-color: #7C809B;
+        color: white;
+        border-radius: 10px;
+        border: 3px solid #FFF;
+        height: 54px;
+        width: 160px;
+        margin: 15px 0;
+    }
+}
+
+.footer__container-2{
+    height: 386px;
+    width: 100%;
+    color: #FFF;
+    /* border: 2px solid white; */
+    font-family: 'Poppins', sans-serif;
+    background-color: #161B33;
+    text-align: left;
+    display: flex;
+    position: relative;
+
+
+    .ul{
+        margin-top: 50px;
+        list-style: none;
+        height: fit-content;
+    }
+
+    .primary-ul{
+        font-size: 23.309px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-right: 170px;
+        margin-left: 40px;
+        
+        & li{
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+    }
+
+    .secondary-ul{
+        font-size: 19.146px;
+        font-weight: 500;
+        margin-right: 80px;
+
+        & span{
+            font-size: 23px;
+            font-weight: 500;
+        }
+
+        & li {
+            margin-bottom: 7px;
+            cursor: pointer;
+        }
+    }
+
+    .social-media__links{
+        display: flex;
+        gap: 26px;
+        height: fit-content;
+        position: absolute;
+        top: 57px;
+        right: 38px;
+        cursor: pointer;
+    }
+
+    & p{
+        color: #7C809B;
+        font-size: 19.146px;
+        font-weight: 500;
+        position: absolute;
+        bottom: 14px;
+        left: 41px;
+    }
+}
