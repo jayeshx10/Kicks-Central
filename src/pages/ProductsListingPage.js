@@ -3,6 +3,7 @@ import { SideBar } from "components/SideBar";
 import { Link } from "react-router-dom";
 
 import "styles/productsListingPage.css";
+import { Footer } from "components/Footer";
 import { GetAllProducts } from "services/services.js";
 import { ProductsContext } from "contexts/ProductsContext";
 
@@ -29,17 +30,20 @@ export default function ProductsListingPage() {
   };
 
   return (
-    <div className="product-listing-main-div">
-      <div>
-        <SideBar />
+    <>
+      <div className="product-listing-main-div">
+        <div>
+          <SideBar />
+        </div>
+        <div className="all-products">
+          <ul className="product-cards-ul">
+            {productsPostSorting.map((product) => {
+              return <ProductCard product={product} />;
+            })}
+          </ul>
+        </div>
       </div>
-      <div className="all-products">
-        <ul className="product-cards-ul">
-          {productsPostSorting.map((product) => {
-            return <ProductCard product={product} />;
-          })}
-        </ul>
-      </div>
-    </div>
+      <Footer />
+    </>
   );
 }
