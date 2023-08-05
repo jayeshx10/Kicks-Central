@@ -1,8 +1,5 @@
 .footer{
-    /* display: flex;
-    flex-direction: column; */
-    /* margin-top: 40px; */
-    width: 98vw;
+    width: 99vw;
     margin: 40px auto;
     margin-bottom: 0;
 }
@@ -71,7 +68,7 @@
     .secondary-ul{
         font-size: 19.146px;
         font-weight: 500;
-        margin-right: 80px;
+        margin-right: 100px;
 
         & span{
             font-size: 23px;
@@ -90,7 +87,7 @@
         height: fit-content;
         position: absolute;
         top: 57px;
-        right: 38px;
+        right: 58px;
         cursor: pointer;
     }
 
