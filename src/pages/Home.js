@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import { ListItemCard } from "components/ListItemCard";
 import "styles/home.css";
 import {
   newBalancePink,
@@ -59,26 +60,18 @@ export const Home = () => {
       </div>
       <p className="home__heading">New Arrivals</p>
       <ul className="home__ul">
-        <li className="ul__li">
-          <img src={zenFlex} className="li__img" />
-          <p className="li__title">ZenFlex</p>
-          <p className="li__type">Sliders</p>
-        </li>
-        <li className="ul__li">
-          <img src={aeroWalk} className="li__img" />
-          <p className="li__title">AeroWalk</p>
-          <p className="li__type">Basketball</p>
-        </li>
-        <li className="ul__li">
-          <img src={infinityWalk} className="li__img" />
-          <p className="li__title">InfinityWalk</p>
-          <p className="li__type">Sandals</p>
-        </li>
-        <li className="ul__li">
-          <img src={styleSprint} className="li__img" />
-          <p className="li__title">StyleSprint</p>
-          <p className="li__type">Classics</p>
-        </li>
+        <ListItemCard imgUrl={zenFlex} title="ZenFlex" type="Sliders" />
+        <ListItemCard imgUrl={aeroWalk} title="AeroWalk" type="Basketball" />
+        <ListItemCard
+          imgUrl={infinityWalk}
+          title="InfinityWalk"
+          type="Sandals"
+        />
+        <ListItemCard
+          imgUrl={styleSprint}
+          title="StyleSprint"
+          type="Classics"
+        />
       </ul>
       <div className="swift-strike">
         <Link to="/products" className="swift-strike swift-strike__links">
@@ -140,26 +133,10 @@ export const Home = () => {
       </div>
       <p className="home__heading">Bestseller of ‘22</p>
       <ul className="home__ul">
-        <li className="ul__li">
-          <img src={velocityX} className="li__img" />
-          <p className="li__title">VelocityX</p>
-          <p className="li__type">Sneakers</p>
-        </li>
-        <li className="ul__li">
-          <img src={flexStride} className="li__img" />
-          <p className="li__title">FlexStride</p>
-          <p className="li__type">Sneakers</p>
-        </li>
-        <li className="ul__li">
-          <img src={aeroTech} className="li__img" />
-          <p className="li__title">AeroTech</p>
-          <p className="li__type">Sneakers</p>
-        </li>
-        <li className="ul__li">
-          <img src={techGrip} className="li__img" />
-          <p className="li__title">TechGrip</p>
-          <p className="li__type">Sneakers</p>
-        </li>
+        <ListItemCard imgUrl={velocityX} title="VelocityX" type="Sneakers" />
+        <ListItemCard imgUrl={flexStride} title="FlexStride" type="Sneakers" />
+        <ListItemCard imgUrl={aeroTech} title="AeroTech" type="Sneakers" />
+        <ListItemCard imgUrl={techGrip} title="TechGrip" type="Sneakers" />
       </ul>
     </div>
   );
