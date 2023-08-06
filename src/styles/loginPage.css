@@ -16,6 +16,7 @@
     font-size: 18px;
     font-weight: 600;
     margin: 0.3rem 0;
+    position: relative;
 }
 
 .inputs{
@@ -23,6 +24,21 @@
     width: 95%;
     padding: 0 0 0 5px;
     border: 2px solid black;
+    margin-top: 10px;
+}
+
+.inputs__button-icons{
+    position: absolute;
+    bottom: 2px;
+    right: 25px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.inputs__password-icons{
+    height: 25px;
+    width: 30px;
 }
 
 .btns-sign-ins{
@@ -34,6 +50,7 @@
     height: 40px;
     width: 96%;
     margin: 0 0 5px 0;
+    cursor: pointer;
 
     transition-duration: 400ms;
 }

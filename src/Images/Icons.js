@@ -199,3 +199,7 @@ export const DeleteIcon = () => {
 };
 
 export const closeIcon = "https://img.icons8.com/?size=512&id=8112&format=png";
+export const showPassword =
+  "https://img.icons8.com/?size=512&id=986&format=png";
+export const hidePassword =
+  "https://img.icons8.com/?size=512&id=33916&format=png";

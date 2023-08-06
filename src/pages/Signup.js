@@ -1,9 +1,18 @@
 import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import "styles/signup.css";
+import { hidePassword, showPassword } from "Images/Icons";
 
 export const Signup = () => {
+  const [passwordType, setPasswordType] = useState("password");
+
+  const togglePasswordState = () => {
+    return passwordType === "password"
+      ? setPasswordType("text")
+      : setPasswordType("password");
+  };
   return (
     <div className="main-container">
       <h2 className="signup-h2">Sign Up</h2>
@@ -28,26 +37,33 @@ export const Signup = () => {
         required
       />
       <label className="labels" for="password">
-        Password:{" "}
+        Password (8 characters minimum):
+        <input
+          className="inputs"
+          type={passwordType}
+          name="password"
+          placeholder="••••••••••••"
+          minlength="8"
+          required
+        />
+        <button className="inputs__button-icons" onClick={togglePasswordState}>
+          <img
+            src={passwordType === "password" ? showPassword : hidePassword}
+            className="inputs__password-icons"
+          />
+        </button>
       </label>
-      <input
-        className="inputs"
-        type="text"
-        name="password"
-        placeholder="••••••••••••"
-        required
-      />
       <label className="labels" for="cnf-password">
         Confirm Password:{" "}
+        <input
+          className="inputs"
+          type={passwordType}
+          name="cnf-password"
+          placeholder="••••••••••••"
+          minlength="8"
+          required
+        />
       </label>
-      <input
-        className="inputs"
-        type="text"
-        name="cnf-password"
-        placeholder="••••••••••••"
-        required
-      />
-      <br />
       <button className="btn-new-acc">CREATE NEW ACCOUNT</button>
       <p>
         Already have an account?{" "}
