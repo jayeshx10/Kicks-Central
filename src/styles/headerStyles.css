@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 .logo-kicksCentral{
     height: 82.716px;
@@ -29,6 +30,9 @@
     border-radius: 30px;
     border: 1px solid #ABB2B9;
     text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
 }
 
 .btn-icons {

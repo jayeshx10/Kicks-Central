@@ -25,7 +25,6 @@ export const AllRoutes = () => {
         <Route path="/product/:productID" element={<ProductPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/user" element={<User />} />
         <Route
           path="/wishlist"
           element={
@@ -39,6 +38,14 @@ export const AllRoutes = () => {
           element={
             <RequiresAuth token={token}>
               <Cart />
+            </RequiresAuth>
+          }
+        />
+        <Route
+          path="/user"
+          element={
+            <RequiresAuth token={token}>
+              <User />
             </RequiresAuth>
           }
         />

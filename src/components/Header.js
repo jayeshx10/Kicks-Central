@@ -18,7 +18,7 @@ export const Header = () => {
         <div className="header__navbar">
           <input
             type="text"
-            placeholder="    Search"
+            placeholder="Search"
             className="header__input-search"
             onChange={(e) =>
               dispatch({ type: "searchedKeyword", payload: e.target.value })

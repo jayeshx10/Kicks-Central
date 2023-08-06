@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.user-details{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin: 80px auto;
+    border: 2px solid black;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    padding: 1rem;
+    position: relative;
+
+    & p{
+        margin: 10px 0;
+    }
+
+    & span{
+        font-weight: 600;
+    }
+
+    .user-details__ul{
+        list-style: none;
+    }
+
+    .user-details__li{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .user-details__li-text {
+            border: 1px solid black;
+            padding: 10px;
+            width: 80%;
+        }
+
+        .user-details__li-button{
+           background-color: none;
+           cursor: pointer;
+        }
+    }
+
+    .user-details__btns-container{
+        margin-top: 10px;
+    }
+
+    .user-details__btns{
+        font-size: 15px;
+        background-color: black;
+        border: 2px solid white;
+        color: white;
+        padding: 0 20px;
+        height: 50px;
+        width: 50%;
+        cursor: pointer;
+    }
+
+    .new-address__form{
+        position: absolute;
+        right: -450px;
+        top: 100px;
+        border: 1px solid black;
+        padding: 1rem;
+        font-size: 16px;
+
+        display: flex;
+        flex-direction: column;
+
+        & textarea{
+            width: 330px;
+            height: 50px;
+            margin: 10px 0;
+            padding: 10px;
+            word-wrap: break-word;
+            word-break: break-all;
+            font-family: "Poppins", sans-serif;
+            font-size: 18px;
+            resize: none;
+        }
+
+        .address-modal__close-btn {
+            width: fit-content;
+            position: absolute;
+            top: 10px;
+            right: 0;
+            background-color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        & img{
+            height: 40px;
+            width: 40px;
+        }
+
+        & button{
+            padding: 0 20px;
+            height: 40px;
+            width: 30%;
+        }
+    }
+    
+}

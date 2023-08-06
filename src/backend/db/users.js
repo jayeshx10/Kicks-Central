@@ -15,5 +15,10 @@ export const users = [
     password: "adarshbalika",
     createdAt: formatDate(),
     updatedAt: formatDate(),
+    addresses: [
+      "Flat 303, Classique Apartments, Chembur, Maharashtra, 400074",
+      "Plot No. 101, Anand Nagar, Dehradun, Uttarakhand, 100201",
+      "63, Bholenath Residency, Collector's Colony, Chembur, Maharashtra, 101000",
+    ],
   },
 ];
