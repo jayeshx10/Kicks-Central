@@ -47,12 +47,21 @@
     .user-details__btns{
         font-size: 15px;
         background-color: black;
-        border: 2px solid white;
+        border: 1px solid white;
         color: white;
-        padding: 0 20px;
+        padding: 0 15px;
         height: 50px;
-        width: 50%;
+        width: 45%;
         cursor: pointer;
+        margin: 0 5px;
+        transition-duration: 400ms;
+    }
+
+    .user-details__btns:hover {
+        transform: scale(1.02);
+        background-color: white;
+        border: 1px solid black;
+        color: black;
     }
 
     .new-address__form{
@@ -86,6 +95,7 @@
             background-color: white;
             border: none;
             cursor: pointer;
+            transition-duration: 400ms;
         }
 
         & img{

@@ -44,7 +44,7 @@
 .btns-sign-ins{
     font-size: 14px;
     background-color: black;
-    border: 2px solid white;
+    border: 1px solid white;
     color: white;
     padding: 0.5rem;
     height: 40px;
@@ -56,13 +56,10 @@
 }
 
 .btns-sign-ins:hover{
-    font-size: 14px;
+    transform: scale(1.02);
     background-color: white;
-    border: 2px solid black;
+    border: 1px solid black;
     color: black;
-    padding: 0.5rem;
-    height: 40px;
-    width: 96%;
 }
 
 .link-signup{

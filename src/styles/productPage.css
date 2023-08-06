@@ -42,7 +42,16 @@
     padding: 0.5rem;
     height: 3rem;
     width: 50%;
-    margin: 1rem 0;
+    margin: 1rem 0.3rem;
+    cursor: pointer;
+    transition-duration: 400ms;
+}
+
+.btn-add:hover {
+    transform: scale(1.02);
+    background-color: white;
+    border: 1px solid black;
+    color: black;
 }
 
 .btn-disabled{

@@ -28,24 +28,21 @@
 .btn-new-acc {
     font-size: 14px;
     background-color: black;
-    border: 2px solid white;
+    border: 1px solid white;
     color: white;
     padding: 0.5rem;
     height: 40px;
     width: 96%;
     margin: 10px 0;
-
+    cursor: pointer;
     transition-duration: 400ms;
 }
 
 .btn-new-acc:hover {
-    font-size: 14px;
+    transform: scale(1.02);
     background-color: white;
-    border: 2px solid black;
+    border: 1px solid black;
     color: black;
-    padding: 0.5rem;
-    height: 40px;
-    width: 96%;
 }
 
 .link-login {
