@@ -2,6 +2,7 @@ import React from "react";
 import { useContext, useState } from "react";
 
 import "styles/wishlist.css";
+import { Footer } from "components/Footer";
 import { WishlistCartContext } from "contexts/WishlistCartContext";
 
 export const Wishlist = () => {
@@ -28,21 +29,22 @@ export const Wishlist = () => {
     );
   };
 
-  console.log(wishlistData);
-
   return (
-    <div className="wishlist-container">
-      <h2>Items: {wishlistData.length}</h2>
-      <ul className="wishlist-ul">
-        {wishlistData.map((item) => {
-          const { _id } = item;
-          return (
-            <li className="wishlist-li" key={_id}>
-              <WishlistProductCard item={item} />
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+    <>
+      <div className="wishlist-container">
+        <h2>Items: {wishlistData.length}</h2>
+        <ul className="wishlist-ul">
+          {wishlistData.map((item) => {
+            const { _id } = item;
+            return (
+              <li className="wishlist-li" key={_id}>
+                <WishlistProductCard item={item} />
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+      <Footer />
+    </>
   );
 };

@@ -1,5 +1,7 @@
 import React from "react";
 import { useContext } from "react";
+
+import { Footer } from "components/Footer";
 import { WishlistCartContext } from "contexts/WishlistCartContext";
 
 export const Cart = () => {
@@ -38,21 +40,22 @@ export const Cart = () => {
     );
   };
 
-  console.log(cartData);
-
   return (
-    <div className="wishlist-container">
-      <h2>Items: {cartData.length}</h2>
-      <ul className="wishlist-ul">
-        {cartData.map((item) => {
-          const { _id } = item;
-          return (
-            <li className="wishlist-li" key={_id}>
-              <CartProductCard item={item} />
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+    <>
+      <div className="wishlist-container">
+        <h2>Items: {cartData.length}</h2>
+        <ul className="wishlist-ul">
+          {cartData.map((item) => {
+            const { _id } = item;
+            return (
+              <li className="wishlist-li" key={_id}>
+                <CartProductCard item={item} />
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+      <Footer />
+    </>
   );
 };
