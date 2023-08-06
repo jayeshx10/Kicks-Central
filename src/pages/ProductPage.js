@@ -45,7 +45,7 @@ export const ProductPage = () => {
         </div>
         <div className="btns-product-page">
           {addedToWishlist ? (
-            <button className="btn-disabled btn-add" disabled>
+            <button className="btn-disabled" disabled>
               Added to wishlist
             </button>
           ) : (
@@ -58,7 +58,7 @@ export const ProductPage = () => {
           )}
           <br />
           {addedToCart ? (
-            <button className="btn-disabled btn-add" disabled>
+            <button className="btn-disabled" disabled>
               Added to Cart
             </button>
           ) : (
