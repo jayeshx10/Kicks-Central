@@ -203,3 +203,7 @@ export const showPassword =
   "https://img.icons8.com/?size=512&id=986&format=png";
 export const hidePassword =
   "https://img.icons8.com/?size=512&id=33916&format=png";
+export const increaseQty =
+  "https://img.icons8.com/?size=512&id=62888&format=png";
+export const decreaseQty =
+  "https://img.icons8.com/?size=512&id=79029&format=png";

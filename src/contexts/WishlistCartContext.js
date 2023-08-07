@@ -16,6 +16,16 @@ export const WishlistCartContextProvider = ({ children }) => {
 
   const [wishlistData, setWishlistData] = useState([]);
   const [cartData, setCartData] = useState([]);
+  const [total, setTotal] = useState(0);
+
+  useEffect(() => {
+    let total = 0;
+    cartData.map((item) => {
+      const { price, qty } = item;
+      return (total += price * qty);
+    });
+    setTotal(total);
+  }, [cartData]);
 
   const getWishlistData = async () => {
     try {
@@ -123,16 +133,13 @@ export const WishlistCartContextProvider = ({ children }) => {
     }
   };
 
-  const handleQuantity = (type, productID) => {
-    console.log(productID);
-    const updatedCart = [...cartData].map((product) => {
-      return product._id === productID
-        ? type === "increment"
-          ? { ...product, quantity: product.quantity + 1 }
-          : { ...product, quantity: product.quantity - 1 }
-        : product;
+  const handleQuantity = async (type, productID) => {
+    await handleQuantityService(token, type, productID).then((response) => {
+      const {
+        data: { cart },
+      } = response;
+      setCartData(cart);
     });
-    setCartData(updatedCart);
   };
 
   return (
@@ -144,6 +151,7 @@ export const WishlistCartContextProvider = ({ children }) => {
         removeProduct,
         moveProduct,
         handleQuantity,
+        total,
       }}
     >
       {children}
