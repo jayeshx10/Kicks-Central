@@ -1,7 +1,7 @@
 .form-container{
     border: 2px solid black;
     width: 25%;
-    margin: 60px auto;
+    margin: 30px auto;
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -49,7 +49,7 @@
     padding: 0.5rem;
     height: 40px;
     width: 96%;
-    margin: 0 0 5px 0;
+    margin: 0 0 10px 0;
     cursor: pointer;
 
     transition-duration: 400ms;
