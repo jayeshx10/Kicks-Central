@@ -60,3 +60,32 @@
     }
 }
 
+.empty-wishlist {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+
+    .empty-wishlist__btn {
+        font-size: 16px;
+        background-color: black;
+        border: 2px solid white;
+        color: white;
+        padding: 0.5rem;
+        align-self: center;
+        margin: 20px;
+        height: 3rem;
+        width: 200px;
+        cursor: pointer;
+        transition-duration: 400ms;
+    }
+
+    .empty-wishlist__btn:hover {
+        transform: scale(1.02);
+        background-color: white;
+        border: 1px solid black;
+        color: black;
+    }
+}

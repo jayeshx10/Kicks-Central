@@ -44,19 +44,28 @@ export const Wishlist = () => {
 
   return (
     <>
-      <div className="wishlist__container">
-        <h2>Items in your wishlist: {wishlistData.length}</h2>
-        <ul className="wishlist__ul">
-          {wishlistData.map((item) => {
-            const { _id } = item;
-            return (
-              <li className="wishlist__li" key={_id}>
-                <WishlistProductCard item={item} />
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+      {wishlistData.length >= 1 ? (
+        <div className="wishlist__container">
+          <h2>Items in your wishlist: {wishlistData.length}</h2>
+          <ul className="wishlist__ul">
+            {wishlistData.map((item) => {
+              const { _id } = item;
+              return (
+                <li className="wishlist__li" key={_id}>
+                  <WishlistProductCard item={item} />
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      ) : (
+        <div className="empty-wishlist">
+          <h1>Nothing in your Wishlist :/</h1>
+          <Link to="/products">
+            <button className="empty-wishlist__btn">Start Wishlisting</button>
+          </Link>
+        </div>
+      )}
       <Footer />
     </>
   );
