@@ -6,6 +6,10 @@
     width: 183px;
 }
 
+.header{
+    height: 20vh;
+}
+
 .header__container-1 {
     display: flex;
     align-items: center;
