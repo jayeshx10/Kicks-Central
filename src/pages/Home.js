@@ -25,7 +25,7 @@ export const Home = () => {
     <div className="home">
       <div className="home__container-1">
         <div className="discover-card">
-          <img src={newBalancePink} className="discover__img" />
+          <img src={newBalancePink} className="discover__img" alt="Shoes" />
           <p className="discover__primary-text">Discover</p>
           <p className="discover__secondary-text">Solid Colors</p>
           <Link to="/products" className="discover__links">
@@ -33,7 +33,7 @@ export const Home = () => {
           </Link>
         </div>
         <div className="trends-card">
-          <img src={pinkSkates} className="trends__img" />
+          <img src={pinkSkates} className="trends__img" alt="Shoes" />
           <p className="trends__primary-text">Trends</p>
           <p className="trends__secondary-text">Upcoming</p>
           <Link to="/products" className="trends__links">
@@ -42,7 +42,11 @@ export const Home = () => {
         </div>
         <div className="flex-col">
           <div className="effortlessly-card">
-            <img src={whiteAirForce} className="effortlessly__img" />
+            <img
+              src={whiteAirForce}
+              className="effortlessly__img"
+              alt="Shoes"
+            />
             <p className="effortlessly__primary-text">Effortlessly</p>
             <p className="effortlessly__secondary-text">Transition</p>
             <Link to="/products" className="effortlessly__links">
@@ -50,7 +54,7 @@ export const Home = () => {
             </Link>
           </div>
           <div className="styling-card">
-            <img src={skateboardShoes} className="styling__img" />
+            <img src={skateboardShoes} className="styling__img" alt="Shoes" />
             <p className="styling__primary-text">Styling</p>
             <p className="styling__secondary-text">Edgy</p>
             <Link to="/products" className="styling__links">
@@ -87,7 +91,7 @@ export const Home = () => {
                 <li>Flat 30% Off</li>
               </ul>
             </div>
-            <img src={swiftStrike} className="img__swift-strike" />
+            <img src={swiftStrike} className="img__swift-strike" alt="Shoes" />
           </div>
           <div className="swift-strike__info">
             <p>SwiftStrike</p>
@@ -107,7 +111,7 @@ export const Home = () => {
       <div className="home__try-trending">
         <div className="flex-col">
           <div className="collection-card__small">
-            <img src={pinkSkates} />
+            <img src={pinkSkates} alt="Shoes" />
             <p className="card__title">Urban</p>
             <p className="card__type">Women's collection</p>
             <Link to="/products">
@@ -115,7 +119,7 @@ export const Home = () => {
             </Link>
           </div>
           <div className="collection-card__small">
-            <img src={pinkSkates} />
+            <img src={pinkSkates} alt="Shoes" />
             <p className="card__title">Chic</p>
             <p className="card__type">Unisex collection</p>
             <Link to="/products">
@@ -124,7 +128,7 @@ export const Home = () => {
           </div>
         </div>
         <div className="collection-card__big">
-          <img src={pinkSkates} />
+          <img src={pinkSkates} alt="Shoes" />
           <p className="card__title">Versatile</p>
           <p className="card__type">Men's collection</p>
           <Link to="/products">

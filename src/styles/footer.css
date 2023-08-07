@@ -2,6 +2,8 @@
     width: 99vw;
     margin: 40px auto;
     margin-bottom: 0;
+    position: absolute;
+    bottom: -530px;
 }
 
 .footer__container-1{

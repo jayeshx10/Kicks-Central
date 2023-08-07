@@ -1,17 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 import "styles/wishlist.css";
 import { Footer } from "components/Footer";
 import { WishlistCartContext } from "contexts/WishlistCartContext";
 
 export const Wishlist = () => {
-  const { wishlistData, addProduct, removeProduct, moveProduct } =
+  const { wishlistData, removeProduct, moveProduct } =
     useContext(WishlistCartContext);
 
   const WishlistProductCard = ({ item }) => {
-    const { _id, name, brand, imgUrl, about, price, categoryName } = item;
+    const { _id, name, brand, imgUrl, price } = item;
     return (
       <>
         <Link to={`/product/${_id}`} className="links-styling">
