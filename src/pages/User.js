@@ -31,8 +31,7 @@ export const User = () => {
   }, [userDetails]);
 
   const logoutHandler = () => {
-    localStorage.removeItem("loginDetails");
-    setToken("");
+    setToken(""); 
     <Navigate to="/login" />;
   };
 

@@ -4,6 +4,18 @@ export const GetAllProducts = async () => axios.get("/api/products");
 
 export const GetProductsByCategory = async () => axios.get("/api/categories");
 
+export const signupService = async (signupDetails) => {
+  const { firstName, lastName, email, password, addresses } = signupDetails;
+
+  return axios.post("/api/auth/signup", {
+    firstName,
+    lastName,
+    email,
+    password,
+    addresses,
+  });
+};
+
 export const loginUserService = async ({ email, password }) => {
   return axios.post("/api/auth/login", {
     email,

@@ -45,6 +45,7 @@ export const LoginPage = () => {
             className="inputs"
             type="text"
             name="input-email"
+            value={userCredentials.email}
             onChange={(e) =>
               setUserCredentials((prevState) => ({
                 ...prevState,
@@ -61,6 +62,7 @@ export const LoginPage = () => {
             className="inputs"
             type={passwordType}
             name="input-password"
+            value={userCredentials.password}
             onChange={(e) =>
               setUserCredentials((prevState) => ({
                 ...prevState,
@@ -77,6 +79,7 @@ export const LoginPage = () => {
             <img
               src={passwordType === "password" ? showPassword : hidePassword}
               className="inputs__password-icons"
+              alt="Hide or show password"
             />
           </button>
         </label>
@@ -84,7 +87,13 @@ export const LoginPage = () => {
         <button type="submit" className="btns-sign-ins">
           SIGN IN
         </button>
-        <button type="submit" className="btns-sign-ins">
+        <button
+          type="submit"
+          onClick={() => {
+            setUserCredentials(testUser);
+          }}
+          className="btns-sign-ins"
+        >
           LOG IN AS GUEST
         </button>
         <p>

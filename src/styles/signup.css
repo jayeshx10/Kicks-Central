@@ -2,7 +2,7 @@
     border: 2px solid black;
     width: 25%;
     margin: 30px auto;
-    padding: 1rem;
+    padding: 20px;
     display: flex;
     flex-direction: column;
 }
@@ -16,13 +16,20 @@
     font-size: 18px;
     font-weight: 600;
     margin: 0.3rem 0;
+    width: 100%;
 }
 
 .inputs {
     height: 30px;
-    width: 95%;
+    width: 100%;
     padding: 0 0 0 5px;
+    margin: auto;
     border: 2px solid black;
+}
+
+.input-name-container{
+    display: flex;
+    gap: 25px;
 }
 
 .btn-new-acc {
@@ -32,7 +39,7 @@
     color: white;
     padding: 0.5rem;
     height: 40px;
-    width: 96%;
+    width: 97%;
     margin: 10px 0;
     cursor: pointer;
     transition-duration: 400ms;

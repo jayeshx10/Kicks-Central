@@ -17,7 +17,7 @@ export const Wishlist = () => {
         <Link to={`/product/${_id}`} className="links-styling">
           <img src={imgUrl} alt={name} className="wishlist-card__img" />
         </Link>
-        <div>
+        <div className="wishlist-card__text-btns">
           <div className="wishlist-card__li-text">
             <p>{name}</p>
             <p>{brand}</p>

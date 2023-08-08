@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useState, useEffect, useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 
 import { Footer } from "components/Footer";
 import { AboutProduct } from "components/AboutProduct";
@@ -9,32 +9,37 @@ import "styles/productPage.css";
 
 export const ProductPage = () => {
   let { productID } = useParams();
-  const { productsDB } = useContext(ProductsContext);
+  const { productsDB, addFlag } = useContext(ProductsContext);
   const { addProduct } = useContext(WishlistCartContext);
 
-  const product = productsDB.find((product) => product._id === productID);
-  const { _id, name, brand, imgUrl, about, price, categoryName } = product;
+  const [product, setProduct] = useState(
+    productsDB.find((product) => product._id === productID)
+  );
 
-  //states for "Added to wishlist" and "Added to cart"
-  const [addedToWishlist, setAddedToWishlist] = useState(false);
-  const [addedToCart, setAddedToCart] = useState(false);
+  useEffect(() => {
+    const newData = productsDB.find((product) => product._id === productID);
+    setProduct(newData);
+  }, [productsDB, productID]);
 
-  //handler for "Add to wishlist" and "Add to cart"
+  const { name, brand, imgUrl, about, price, isWished, inCart } = product;
+
+  // console.log("1", productID);
+  // const product = productsDB.find((product) => product._id === productID);
+  // console.log("2", product);
+
+  // console.log("3", product);
+
   const addHandler = (type, product) => {
-    if (type === "wishlist") {
-      addProduct("wishlist", product);
-      setAddedToWishlist(!addedToWishlist);
-    } else {
-      addProduct("cart", product);
-      setAddedToCart(!addedToCart);
-    }
+    addProduct(type, product);
+    addFlag(type, product);
+    console.log("from productPage", product);
   };
 
   return (
     <>
       <div className="productPage-main-container">
         <div className="productPage-div-left">
-          <img src={imgUrl} />
+          <img src={imgUrl} alt="Shoes" />
         </div>
         <div className="productPage-div-right">
           <div>
@@ -45,7 +50,7 @@ export const ProductPage = () => {
             <p className="p-price">₹ {price}</p>
           </div>
           <div className="btns-product-page">
-            {addedToWishlist ? (
+            {isWished ? (
               <button className="btn-disabled" disabled>
                 Added to wishlist
               </button>
@@ -58,7 +63,7 @@ export const ProductPage = () => {
               </button>
             )}
             <br />
-            {addedToCart ? (
+            {inCart ? (
               <button className="btn-disabled" disabled>
                 Added to Cart
               </button>

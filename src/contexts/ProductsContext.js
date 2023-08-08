@@ -1,7 +1,6 @@
 import React from "react";
 import { createContext, useState, useEffect, useReducer } from "react";
 import { GetAllProducts } from "services/services";
-// import { productsMainDB } from "App.js";
 
 export const ProductsContext = createContext();
 
@@ -20,6 +19,30 @@ export const ProductsContextProvider = ({ children }) => {
   useEffect(() => {
     getData();
   }, []);
+
+  const addFlag = (type, product) => {
+    const { _id } = product;
+    const newData = productsDB.map((product) => {
+      return product._id === _id
+        ? type === "wishlist"
+          ? { ...product, isWished: true }
+          : { ...product, inCart: true }
+        : product;
+    });
+    setProductsDB(newData);
+  };
+
+  const removeFlag = (type, product) => {
+    const { _id } = product;
+    const newData = productsDB.map((product) => {
+      return product._id === _id
+        ? type === "wishlist"
+          ? { ...product, isWished: false }
+          : { ...product, inCart: false }
+        : product;
+    });
+    setProductsDB(newData);
+  };
 
   const initialFilterState = {
     searchedKeyword: "",
@@ -72,6 +95,8 @@ export const ProductsContextProvider = ({ children }) => {
     <ProductsContext.Provider
       value={{
         productsDB,
+        addFlag,
+        removeFlag,
         productsPostSorting,
         dispatch,
         filters,

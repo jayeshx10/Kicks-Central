@@ -6,6 +6,8 @@
     .wishlist__ul {
         display: flex;
         flex-wrap: wrap;
+        margin: 0 auto;
+        width: fit-content;
     }
 
     .wishlist__li {
@@ -14,6 +16,12 @@
         width: 700px;
         margin: 20px;
         display: flex;
+
+        .wishlist-card__text-btns{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
 
         .wishlist-card__img {
             height: 200px;
@@ -25,7 +33,6 @@
             font-size: 20px;
             font-weight: 700;
             margin: 10px;
-            /* border: 2px solid red; */
 
             & p:nth-child(2) {
                 font-size: 16px;
@@ -44,6 +51,7 @@
                 color: white;
                 padding: 0.5rem;
                 margin-right: 5px;
+                margin-bottom: 10px;
                 height: 3rem;
                 width: 200px;
                 cursor: pointer;

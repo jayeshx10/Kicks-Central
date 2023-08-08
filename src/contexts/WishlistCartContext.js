@@ -1,6 +1,8 @@
 import React from "react";
 import { createContext, useState, useEffect, useContext } from "react";
+
 import { AuthContext } from "contexts/AuthContext";
+import { ProductsContext } from "contexts/ProductsContext";
 import {
   getWishlistDataService,
   getCartDataService,
@@ -13,6 +15,7 @@ export const WishlistCartContext = createContext();
 
 export const WishlistCartContextProvider = ({ children }) => {
   const { token } = useContext(AuthContext);
+  const { isWishedInCart, addFlag, removeFlag } = useContext(ProductsContext);
 
   const [wishlistData, setWishlistData] = useState([]);
   const [cartData, setCartData] = useState([]);
@@ -73,6 +76,7 @@ export const WishlistCartContextProvider = ({ children }) => {
         } = await addProductService(token, type, product);
         if (status === 200 || status === 201) {
           setWishlistData(wishlist);
+          addFlag("wishlist", product);
         }
       } catch (error) {
         console.log(error);
@@ -85,6 +89,7 @@ export const WishlistCartContextProvider = ({ children }) => {
         } = await addProductService(token, type, product);
         if (status === 200 || status === 201) {
           setCartData(cart);
+          addFlag("cart", product);
         }
       } catch (error) {
         console.log(error);
@@ -101,6 +106,7 @@ export const WishlistCartContextProvider = ({ children }) => {
         } = await removeProductService(token, type, targetID);
         if (status === 200 || status === 201) {
           setWishlistData(wishlist);
+          removeFlag("wishlist", targetID);
         }
       } catch (error) {
         console.log(error);
@@ -113,6 +119,7 @@ export const WishlistCartContextProvider = ({ children }) => {
         } = await removeProductService(token, type, targetID);
         if (status === 200 || status === 201) {
           setCartData(cart);
+          removeFlag("cart", targetID);
         }
       } catch (error) {
         console.log(error);
