@@ -1,13 +1,15 @@
 import React from "react";
 import { useState, createContext } from "react";
+
 import { loginUserService, signupService } from "services/services.js";
+import { toastifyMessageService } from "services/services.js";
 
 export const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
-  const localStorageToken = JSON.parse(localStorage.getItem("loginDetails"));
-  const [token, setToken] = useState();
-  const [currUser, setCurrUser] = useState();
+  const localStorageToken = JSON.parse(localStorage?.getItem("loginDetails"));
+  const [token, setToken] = useState(localStorageToken?.token);
+  const [currUser, setCurrUser] = useState(localStorageToken?.user);
 
   const loginHandler = async (loginData) => {
     try {
@@ -21,7 +23,6 @@ export const AuthContextProvider = ({ children }) => {
         if (encodedToken === localStorageToken?.token) {
           setToken(localStorageToken.token);
           setCurrUser(localStorageToken.user);
-          console.log("if", currUser);
         } else {
           localStorage.setItem(
             "loginDetails",
@@ -29,11 +30,10 @@ export const AuthContextProvider = ({ children }) => {
           );
           setToken(encodedToken);
           setCurrUser(foundUser);
-          console.log("else", foundUser);
         }
       }
     } catch (error) {
-      alert(error.response.data.errors);
+      toastifyMessageService("error", error.response.data.errors);
     }
   };
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 import "styles/Cart.css";
 import { increaseQty, decreaseQty } from "Images/Icons";
@@ -113,6 +114,7 @@ export const Cart = () => {
         )}
       </div>
       <Footer />
+      <ToastContainer />
     </>
   );
 };

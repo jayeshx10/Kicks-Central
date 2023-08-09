@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 
 export const GetAllProducts = async () => axios.get("/api/products");
 
@@ -75,4 +76,15 @@ export const handleQuantityService = async (encodedToken, type, productID) => {
       },
     }
   );
+};
+
+export const toastifyMessageService = (type, msg) => {
+  switch (type) {
+    case "success":
+      return toast.success(msg);
+    case "error":
+      return toast.error(msg);
+    default:
+      break;
+  }
 };

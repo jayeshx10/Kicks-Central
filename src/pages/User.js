@@ -1,12 +1,13 @@
 import React from "react";
 import { v4 as uuid } from "uuid";
 import { useContext, useState, useEffect } from "react";
-import { Navigate } from "react-router";
+import { Link } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 import "styles/user.css";
+import { toastifyMessageService } from "services/services.js";
 import { Footer } from "components/Footer";
 import { DeleteIcon, closeIcon } from "Images/Icons";
-import { loginUserService } from "services/services";
 import { AuthContext } from "contexts/AuthContext";
 
 export const User = () => {
@@ -21,6 +22,7 @@ export const User = () => {
   const deleteAddress = (target) => {
     const newData = addresses.filter((address) => address !== target);
     setUserDetails((prevData) => ({ ...prevData, addresses: newData }));
+    toastifyMessageService("success", "Successfully deleted address");
   };
 
   useEffect(() => {
@@ -31,8 +33,8 @@ export const User = () => {
   }, [userDetails]);
 
   const logoutHandler = () => {
-    setToken(""); 
-    <Navigate to="/login" />;
+    setToken("");
+    localStorage.removeItem("loginDetails");
   };
 
   const changeHandler = (e) => {
@@ -46,13 +48,33 @@ export const User = () => {
       ...prevState,
       addresses: [...prevState.addresses, newAddress],
     }));
+    toastifyMessageService("success", "Successfully added new address");
   };
 
   const toggleModal = () => {
     setModalState((prevState) => !prevState);
   };
 
-  return (
+  const PostLogout = () => {
+    useEffect(() => {
+      toastifyMessageService("error", "You are Logged out!");
+    }, []);
+
+    return (
+      <div className="post-logout">
+        <h1>You are currently logged out</h1>
+        <Link to="/login">
+          <button className="post-logout__btn user-page__btns">
+            Log In here
+          </button>
+        </Link>
+        <ToastContainer />
+        <Footer />
+      </div>
+    );
+  };
+
+  return token ? (
     <>
       <div className="user-details">
         <p>
@@ -80,10 +102,10 @@ export const User = () => {
           })}
         </ul>
         <div className="user-details__btns-container">
-          <button className="user-details__btns" onClick={toggleModal}>
+          <button className="user-page__btns" onClick={toggleModal}>
             Add New Address
           </button>
-          <button className="user-details__btns" onClick={logoutHandler}>
+          <button className="user-page__btns" onClick={logoutHandler}>
             Log Out
           </button>
         </div>
@@ -91,7 +113,7 @@ export const User = () => {
           <form className="new-address__form" onSubmit={submitHandler}>
             <h2>Enter New Address</h2>
             <textarea rows="2" cols="20" wrap="hard" onChange={changeHandler} />
-            <button type="submit" className="user-details__btns">
+            <button type="submit" className="user-page__btns">
               Submit
             </button>
             <button onClick={toggleModal} className="address-modal__close-btn">
@@ -101,6 +123,9 @@ export const User = () => {
         )}
       </div>
       <Footer />
+      <ToastContainer />
     </>
+  ) : (
+    <PostLogout />
   );
 };

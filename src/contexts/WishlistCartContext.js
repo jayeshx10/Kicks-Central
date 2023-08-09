@@ -129,6 +129,7 @@ export const WishlistCartContextProvider = ({ children }) => {
 
   const moveProduct = (type, product) => {
     const { _id } = product;
+
     if (type === "wishlist_to_cart") {
       //WISHLIST ---> CART
       addProduct("cart", product);

@@ -1,8 +1,10 @@
 import React from "react";
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 import "styles/signup.css";
+import { toastifyMessageService } from "services/services.js";
 import { AuthContext } from "contexts/AuthContext";
 import { Footer } from "components/Footer";
 import { hidePassword, showPassword } from "Images/Icons";
@@ -34,18 +36,20 @@ export const Signup = () => {
     }));
   };
 
-  const formSubmitter = async (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
     if (signupDetails.password === signupDetails.confirmPassword) {
       signupHandler(signupDetails);
+      toastifyMessageService("success", "Signed Up");
     } else {
-      alert("Password Mismatch");
+      toastifyMessageService("error", "Passwords are not matching");
     }
   };
 
   return (
     <>
-      <form className="main-container" onSubmit={formSubmitter}>
+      <ToastContainer />
+      <form className="main-container" onSubmit={submitHandler}>
         <h2 className="signup-h2">Sign Up</h2>
         <div className="input-name-container">
           <div>
@@ -95,7 +99,7 @@ export const Signup = () => {
             type={passwordType}
             name="password"
             placeholder="••••••••••••"
-            minlength="8"
+            minLength="8"
             onChange={changeHandler}
             required
           />
@@ -104,7 +108,7 @@ export const Signup = () => {
             onClick={togglePasswordState}
           >
             <img
-              src={passwordType === "password" ? showPassword : hidePassword}
+              src={passwordType === "password" ? hidePassword : showPassword}
               className="inputs__password-icons"
               alt="Hide or show password"
             />
@@ -117,7 +121,7 @@ export const Signup = () => {
             type={passwordType}
             name="confirmPassword"
             placeholder="••••••••••••"
-            minlength="8"
+            minLength="8"
             onChange={changeHandler}
             required
           />

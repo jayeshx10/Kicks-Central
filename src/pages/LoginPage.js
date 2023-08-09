@@ -1,12 +1,14 @@
 import React from "react";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
+import "styles/loginPage.css";
+import { toastifyMessageService } from "services/services.js";
 import { Footer } from "components/Footer";
 import { hidePassword, showPassword } from "Images/Icons";
 import { AuthContext } from "contexts/AuthContext";
-import "styles/loginPage.css";
 
 export const LoginPage = () => {
   const { token, loginHandler } = useContext(AuthContext);
@@ -18,7 +20,8 @@ export const LoginPage = () => {
 
   const [passwordType, setPasswordType] = useState("password");
 
-  const togglePasswordState = () => {
+  const togglePasswordState = (e) => {
+    e.preventDefault();
     return passwordType === "password"
       ? setPasswordType("text")
       : setPasswordType("password");
@@ -30,12 +33,29 @@ export const LoginPage = () => {
   };
 
   const submitHandler = (e) => {
-    toast.success("Successfully Logged In!");
     e.preventDefault();
     loginHandler(userCredentials);
   };
 
-  return (
+  const PostLogin = () => {
+    useEffect(() => {
+      toastifyMessageService("success", "Successfully Logged In!");
+    }, []);
+    return (
+      <div className="post-login">
+        <h1>Successfully logged in</h1>
+        <Link to="/products">
+          <button className="post-login__btn">Start Shopping</button>
+        </Link>
+        <ToastContainer />
+        <Footer />
+      </div>
+    );
+  };
+
+  return token ? (
+    <PostLogin />
+  ) : (
     <>
       <form className="form-container" onSubmit={submitHandler}>
         <h2 className="login-page-h2">Sign In</h2>
@@ -77,7 +97,7 @@ export const LoginPage = () => {
             onClick={togglePasswordState}
           >
             <img
-              src={passwordType === "password" ? showPassword : hidePassword}
+              src={passwordType === "password" ? hidePassword : showPassword}
               className="inputs__password-icons"
               alt="Hide or show password"
             />
@@ -104,6 +124,7 @@ export const LoginPage = () => {
         </p>
       </form>
       <Footer />
+      <ToastContainer />
     </>
   );
 };

@@ -44,26 +44,6 @@
         margin-top: 10px;
     }
 
-    .user-details__btns{
-        font-size: 15px;
-        background-color: black;
-        border: 1px solid white;
-        color: white;
-        padding: 0 15px;
-        height: 50px;
-        width: 45%;
-        cursor: pointer;
-        margin: 0 5px;
-        transition-duration: 400ms;
-    }
-
-    .user-details__btns:hover {
-        transform: scale(1.02);
-        background-color: white;
-        border: 1px solid black;
-        color: black;
-    }
-
     .new-address__form{
         position: absolute;
         right: -450px;
@@ -110,4 +90,38 @@
         }
     }
     
+}
+
+.user-page__btns {
+    font-size: 15px;
+    background-color: black;
+    border: 1px solid white;
+    color: white;
+    padding: 0 15px;
+    height: 50px;
+    width: 45%;
+    cursor: pointer;
+    margin: 0 5px;
+    transition-duration: 400ms;
+}
+
+.user-page__btns:hover {
+    transform: scale(1.02);
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+}
+
+.post-logout{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+
+    .post-logout__btn{
+        width: 200px;
+        margin: 20px;
+    }
 }
