@@ -41,13 +41,14 @@ export const LoginPage = () => {
     useEffect(() => {
       toastifyMessageService("success", "Successfully Logged In!");
     }, []);
+
     return (
       <div className="post-login">
         <h1>Successfully logged in</h1>
         <Link to="/products">
           <button className="post-login__btn">Start Shopping</button>
         </Link>
-        <ToastContainer />
+        <ToastContainer autoClose={2000} />
         <Footer />
       </div>
     );
@@ -124,7 +125,7 @@ export const LoginPage = () => {
         </p>
       </form>
       <Footer />
-      <ToastContainer />
+      <ToastContainer autoClose={2000} />
     </>
   );
 };

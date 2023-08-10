@@ -14,8 +14,7 @@ import ProductsListingPage from "pages/ProductsListingPage";
 import { Home } from "pages/Home";
 
 export const AllRoutes = () => {
-  //const isLoggedIn = false;
-  const { token, currUser } = useContext(AuthContext);
+  const { token } = useContext(AuthContext);
   return (
     <div>
       <Routes>

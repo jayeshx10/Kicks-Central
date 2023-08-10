@@ -48,7 +48,7 @@ export const Signup = () => {
 
   return (
     <>
-      <ToastContainer />
+      <ToastContainer autoClose={2000} />
       <form className="main-container" onSubmit={submitHandler}>
         <h2 className="signup-h2">Sign Up</h2>
         <div className="input-name-container">
