@@ -4,17 +4,15 @@ import { Link } from "react-router-dom";
 
 import "styles/productsListingPage.css";
 import { Footer } from "components/Footer";
-import { GetAllProducts } from "services/services.js";
 import { ProductsContext } from "contexts/ProductsContext";
 
 export default function ProductsListingPage() {
-  const { productsDB, productsPostSorting, filterChangeHandler } =
-    useContext(ProductsContext);
+  const { productsPostSorting } = useContext(ProductsContext);
 
   const ProductCard = ({ product }) => {
-    const { _id, name, imgUrl, brand, about, price, categoryName } = product;
+    const { _id, name, imgUrl, brand, price } = product;
     return (
-      <li className="product-card-li" key={_id}>
+      <li className="product-card-li">
         <Link to={`/product/${_id}`} className="links-styling">
           <img src={imgUrl} className="product-img" alt={name} />
           <p style={{ opacity: "0.6" }}>{brand}</p>
@@ -38,7 +36,8 @@ export default function ProductsListingPage() {
         <div className="all-products">
           <ul className="product-cards-ul">
             {productsPostSorting.map((product) => {
-              return <ProductCard product={product} />;
+              const { _id } = product;
+              return <ProductCard product={product} key={_id} />;
             })}
           </ul>
         </div>

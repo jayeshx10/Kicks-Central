@@ -8,20 +8,20 @@ export const WishlistIcon = () => {
       fill="none"
     >
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M4.87004 20.7438C3.0817 15.1605 5.17337 8.21884 11.035 6.33217C14.1184 5.33717 17.9234 6.16717 20.085 9.14884C22.1234 6.05717 26.0384 5.34384 29.1184 6.33217C34.9784 8.21884 37.0817 15.1605 35.295 20.7438C32.5117 29.5938 22.8 34.2038 20.085 34.2038C17.3717 34.2038 7.7467 29.6972 4.87004 20.7438Z"
         stroke="black"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M26.3145 12.6067C28.3261 12.8133 29.5845 14.4083 29.5095 16.6433"
         stroke="black"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -39,36 +39,36 @@ export const CartIcon = () => {
       <path
         d="M9.49016 10.7174C18.3677 8.48867 29.4046 8.62532 31.9553 11.53C34.5061 14.4346 34.4535 24.147 31.4718 26.812C28.4918 29.477 15.5502 29.7303 11.4502 26.812C7.1185 23.727 9.63183 14.237 9.49016 8.48867C9.57516 5.272 6.0835 4.75034 6.0835 4.75034"
         stroke="black"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M23.5933 17.8663H28.2149"
         stroke="black"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M12.1066 33.5458C12.6066 33.5458 13.0132 33.9525 13.0132 34.4525C13.0132 34.9542 12.6066 35.3608 12.1066 35.3608C11.6049 35.3608 11.1982 34.9542 11.1982 34.4525C11.1982 33.9525 11.6049 33.5458 12.1066 33.5458Z"
         fill="black"
         stroke="black"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M29.3256 33.5458C29.8273 33.5458 30.2339 33.9525 30.2339 34.4525C30.2339 34.9542 29.8273 35.3608 29.3256 35.3608C28.8256 35.3608 28.4189 34.9542 28.4189 34.4525C28.4189 33.9525 28.8256 33.5458 29.3256 33.5458Z"
         fill="black"
         stroke="black"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -84,22 +84,22 @@ export const UserIcon = () => {
       fill="none"
     >
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M19.7411 36.1032C13.588 36.1032 8.3335 35.1457 8.3335 31.3111C8.3335 27.4764 13.5547 23.9365 19.7411 23.9365C25.8941 23.9365 31.1486 27.4421 31.1486 31.2768C31.1486 35.1098 25.9274 36.1032 19.7411 36.1032Z"
         stroke="black"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M19.7292 18.6227C23.7671 18.6227 27.0398 15.35 27.0398 11.3121C27.0398 7.27424 23.7671 4 19.7292 4C15.6913 4 12.417 7.27424 12.417 11.3121C12.4034 15.3364 15.6534 18.6091 19.6777 18.6227C19.6959 18.6227 19.7125 18.6227 19.7292 18.6227Z"
         stroke="black"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -165,7 +165,7 @@ export const YoutubeIcon = () => {
       viewBox="0 0 37 37"
       fill="none"
     >
-      <g clip-path="url(#clip0_57_100)">
+      <g clipPath="url(#clip0_57_100)">
         <path
           d="M18.3926 4.54321H18.5949C20.4631 4.55003 29.9293 4.61822 32.4817 5.3046C33.2533 5.51408 33.9564 5.9224 34.5208 6.48875C35.0851 7.0551 35.491 7.75965 35.6977 8.53198C35.9273 9.39565 36.0886 10.5389 36.1977 11.7185L36.2205 11.9548L36.2705 12.5458L36.2886 12.7821C36.4364 14.8595 36.4546 16.805 36.4568 17.23V17.4005C36.4546 17.8414 36.4341 19.9187 36.2705 22.0824L36.2523 22.3211L36.2318 22.5575C36.1182 23.8575 35.95 25.1485 35.6977 26.0985C35.4916 26.8711 35.086 27.576 34.5215 28.1425C33.9571 28.7089 33.2536 29.117 32.4817 29.3259C29.8452 30.035 19.8244 30.085 18.4358 30.0873H18.113C17.4107 30.0873 14.5061 30.0736 11.4605 29.9691L11.0742 29.9554L10.8764 29.9463L10.4878 29.9304L10.0991 29.9145C7.57631 29.8032 5.17396 29.6236 4.0671 29.3236C3.29546 29.1149 2.5922 28.7072 2.02777 28.1411C1.46334 27.5751 1.05756 26.8707 0.851082 26.0985C0.598801 25.1507 0.430613 23.8575 0.316973 22.5575L0.298791 22.3188L0.280608 22.0824C0.16844 20.5424 0.106284 18.9991 0.0942383 17.455L0.0942383 17.1755C0.0987839 16.6868 0.116966 14.9981 0.239698 13.1344L0.255607 12.9003L0.262426 12.7821L0.280608 12.5458L0.33061 11.9548L0.353338 11.7185C0.462433 10.5389 0.623802 9.39338 0.853355 8.53198C1.05948 7.75934 1.46511 7.05446 2.02956 6.48801C2.59401 5.92156 3.29746 5.51346 4.06937 5.3046C5.17623 5.00914 7.57858 4.82731 10.1014 4.71367L10.4878 4.69776L10.8787 4.68413L11.0742 4.67731L11.4628 4.6614C13.6258 4.59179 15.7898 4.55315 17.9539 4.54549H18.3926V4.54321ZM14.6402 11.8389V22.7893L24.0882 17.3164L14.6402 11.8389Z"
           fill="#384168"
