@@ -84,6 +84,8 @@ export const toastifyMessageService = (type, msg) => {
       return toast.success(msg);
     case "error":
       return toast.error(msg);
+    case "info":
+      return toast.info(msg);
     default:
       break;
   }

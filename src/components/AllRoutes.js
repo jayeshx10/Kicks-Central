@@ -41,7 +41,14 @@ export const AllRoutes = () => {
             </RequiresAuth>
           }
         />
-        <Route path="/user" element={<User />} />
+        <Route
+          path="/user"
+          element={
+            <RequiresAuth token={token}>
+              <User />
+            </RequiresAuth>
+          }
+        />
       </Routes>
     </div>
   );

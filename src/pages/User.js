@@ -1,7 +1,6 @@
 import React from "react";
 import { v4 as uuid } from "uuid";
 import { useContext, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
 import "styles/user.css";
@@ -33,8 +32,11 @@ export const User = () => {
   }, [userDetails]);
 
   const logoutHandler = () => {
-    setToken("");
-    localStorage.removeItem("loginDetails");
+    toastifyMessageService("error", "Logging you out");
+    setTimeout(() => {
+      setToken("");
+      localStorage.removeItem("loginDetails");
+    }, 2000);
   };
 
   const changeHandler = (e) => {
@@ -55,26 +57,7 @@ export const User = () => {
     setModalState((prevState) => !prevState);
   };
 
-  const PostLogout = () => {
-    useEffect(() => {
-      toastifyMessageService("error", "You are Logged out!");
-    }, []);
-
-    return (
-      <div className="post-logout">
-        <h1>You are currently logged out</h1>
-        <Link to="/login">
-          <button className="post-logout__btn user-page__btns">
-            Log In here
-          </button>
-        </Link>
-        <ToastContainer />
-        <Footer />
-      </div>
-    );
-  };
-
-  return token ? (
+  return (
     <>
       <div className="user-details">
         <p>
@@ -123,9 +106,7 @@ export const User = () => {
         )}
       </div>
       <Footer />
-      <ToastContainer />
+      <ToastContainer autoClose={2000} />
     </>
-  ) : (
-    <PostLogout />
   );
 };

@@ -1,5 +1,3 @@
-import { v4 as uuid } from "uuid";
-
 /**
  * Product Database can be added here.
  * You can add products of your wish with different attributes
@@ -7,7 +5,7 @@ import { v4 as uuid } from "uuid";
 
 export const products = [
   {
-    _id: uuid(),
+    _id: "q0nC6ND15N",
     name: "SAMBA DECON CLOUD WHITE/GREY ONE",
     brand: "Adidas Originals",
     imgUrl:
@@ -21,7 +19,7 @@ export const products = [
     inCart: false,
   },
   {
-    _id: uuid(),
+    _id: "9BZvdnvj5C",
     name: "GAZELLE 85 GREEN/WHITE/METALLIC",
     brand: "Adidas Originals",
     imgUrl:
@@ -35,7 +33,7 @@ export const products = [
     inCart: false,
   },
   {
-    _id: uuid(),
+    _id: "tCwHde3QFG",
     name: "OZWEEGO 'MAGIC BEIGE/CLAY STRATA/SAND STRATA'",
     brand: "Adidas Originals",
     imgUrl:
@@ -49,7 +47,7 @@ export const products = [
     inCart: false,
   },
   {
-    _id: uuid(),
+    _id: "DM886IVgyy",
     name: "ADIFOM SUPERSTAR 'CORE WHITE/BLACK'",
     brand: "Adidas Originals",
     imgUrl:
@@ -63,7 +61,7 @@ export const products = [
     inCart: false,
   },
   {
-    _id: uuid(),
+    _id: "eagoZGdYCo",
     name: "AIR JORDAN 2 RETRO LOW 'WHITE/UNIVERSITY BLUE-CEMENT GREY'",
     brand: "Jordan",
     imgUrl:
@@ -77,7 +75,7 @@ export const products = [
     inCart: false,
   },
   {
-    _id: uuid(),
+    _id: "3Sh1myL8mz",
     name: "AIR JORDAN 7 'WHITE INFRARED'",
     brand: "Jordan",
     imgUrl:
@@ -91,7 +89,7 @@ export const products = [
     inCart: false,
   },
   {
-    _id: uuid(),
+    _id: "ysvcFuW7Q1",
     name: "AIR JORDAN 6 RETRO 'VARSITY RED/BLACK'",
     brand: "Jordan",
     imgUrl:
@@ -105,7 +103,7 @@ export const products = [
     inCart: false,
   },
   {
-    _id: uuid(),
+    _id: "Sb7yJz6T6h",
     name: "AIR FORCE 1 MID '07 LV8 'SUMMIT WHITE/BLACK-STADIUM GREEN'",
     brand: "Nike",
     imgUrl:
@@ -119,7 +117,7 @@ export const products = [
     inCart: false,
   },
   {
-    _id: uuid(),
+    _id: "V6X9HuXJhu",
     name: "AIR JORDAN 5 RETRO SE CRAFT 'LT OREWOOD BRN/SAFETY ORANGE-FLAT PEWTER'",
     brand: "Jordan",
     imgUrl:
@@ -133,7 +131,7 @@ export const products = [
     inCart: false,
   },
   {
-    _id: uuid(),
+    _id: "gYWm5wAYIW",
     name: "FORUM MOD LOW 'CLOUD WHITE/BEIGE'",
     brand: "Adidas Originals",
     imgUrl:
@@ -147,7 +145,7 @@ export const products = [
     inCart: false,
   },
   {
-    _id: uuid(),
+    _id: "LEkyeVYY3K",
     name: "GAZELLE 'DARK SLATE/OFF WHITE/CORE BLACK'",
     brand: "Adidas Originals",
     imgUrl:
@@ -161,7 +159,7 @@ export const products = [
     inCart: false,
   },
   {
-    _id: uuid(),
+    _id: "JVG76Vhhkt",
     name: "CHUCK 70 PLUS CANVAS 'WHITE'",
     brand: "Converse",
     imgUrl:
@@ -175,7 +173,7 @@ export const products = [
     inCart: false,
   },
   {
-    _id: uuid(),
+    _id: "UoAiFFp5Mt",
     name: "CHUCK TAYLOR ALL STAR LIFT SEASONAL COLOR 'YELLOW'",
     brand: "Converse",
     imgUrl:
@@ -189,7 +187,7 @@ export const products = [
     inCart: false,
   },
   {
-    _id: uuid(),
+    _id: "ippnUyNanF",
     name: "CLASSIC LEATHER 'VECTOR RED/VECTOR BLUE/WHITE'",
     brand: "Reebok",
     imgUrl:
@@ -203,7 +201,7 @@ export const products = [
     inCart: false,
   },
   {
-    _id: uuid(),
+    _id: "ldjLBC2Z3T",
     name: "AMI RIDER FV 'FADED DENIM'",
     brand: "Puma",
     imgUrl:
@@ -217,7 +215,7 @@ export const products = [
     inCart: false,
   },
   {
-    _id: uuid(),
+    _id: "yplRSlo4sX",
     name: "ADILETTE 22 'TECH PURPLE'",
     brand: "Adidas Originals",
     imgUrl:
@@ -231,7 +229,7 @@ export const products = [
     inCart: false,
   },
   {
-    _id: uuid(),
+    _id: "M6PFVTzFXb",
     name: "BLAZER MID'77 VINTAGE 'BLACK/WHITE'",
     brand: "Nike",
     imgUrl:
@@ -245,7 +243,7 @@ export const products = [
     inCart: false,
   },
   {
-    _id: uuid(),
+    _id: "L4zQDS7PoK",
     name: "DUNK LOW RETRO PREMIUM 'BLACK/BLACK-SAIL'",
     brand: "Nike",
     imgUrl:
@@ -259,7 +257,7 @@ export const products = [
     inCart: false,
   },
   {
-    _id: uuid(),
+    _id: "u7s5oiuwMw",
     name: "SK8 LOW 'GREEN/WHITE'",
     brand: "Vans",
     imgUrl:
@@ -273,7 +271,7 @@ export const products = [
     inCart: false,
   },
   {
-    _id: uuid(),
+    _id: "OyGPNYWrrN",
     name: "X LARGE X CROCS CLASSIC CLOG 'CAMO'",
     brand: "Crocs",
     imgUrl:
@@ -287,7 +285,7 @@ export const products = [
     inCart: false,
   },
   {
-    _id: uuid(),
+    _id: "GefxF26JyH",
     name: "OFFCOURT ADJUST 'SUMMIT WHITE/SUMMIT WHITE-BLACK'",
     brand: "Nike",
     imgUrl:
@@ -301,7 +299,7 @@ export const products = [
     inCart: false,
   },
   {
-    _id: uuid(),
+    _id: "BpEoTodMiI",
     name: "ONEONTA NEXT NATURE 'NEUTRAL OLIVE/CARGO KHAKI-MEDIUM OLIVE'",
     brand: "Nike",
     imgUrl:
@@ -315,7 +313,7 @@ export const products = [
     inCart: false,
   },
   {
-    _id: uuid(),
+    _id: "2045Jvcs3V",
     name: "AIR MAX CIRRO 'PHOTON DUST/UNIVERSITY RED-OBSIDIAN'",
     brand: "Nike",
     imgUrl:

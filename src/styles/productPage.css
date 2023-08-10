@@ -66,3 +66,7 @@
     border: 1px solid black;
     color: black;
 }
+
+.loader__is-active{
+    height: 30vh;
+}
