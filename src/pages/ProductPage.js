@@ -1,8 +1,12 @@
 import { useParams } from "react-router-dom";
+import { Navigate } from "react-router";
+import { ToastContainer } from "react-toastify";
 import { useContext, useState, useEffect } from "react";
 
 import { Loader } from "components/Loader";
+import { toastifyMessageService } from "services/services.js";
 import { Footer } from "components/Footer";
+import { AuthContext } from "contexts/AuthContext";
 import { AboutProduct } from "components/AboutProduct";
 import { ProductsContext } from "contexts/ProductsContext";
 import { WishlistCartContext } from "contexts/WishlistCartContext";
@@ -10,6 +14,7 @@ import "styles/productPage.css";
 
 export const ProductPage = () => {
   let { productID } = useParams();
+  const { token } = useContext(AuthContext);
   const { productsDB, addFlag } = useContext(ProductsContext);
   const { addProduct, wishlistData, cartData } =
     useContext(WishlistCartContext);
@@ -30,8 +35,11 @@ export const ProductPage = () => {
   const product = productsDB.find((product) => product._id === productID);
 
   const addHandler = (type, product) => {
-    addProduct(type, product);
-    addFlag(type, product);
+    if (token) {
+      addProduct(type, product);
+    } else {
+      toastifyMessageService("error", "Please login first");
+    }
   };
 
   if (showLoader) {
@@ -86,6 +94,7 @@ export const ProductPage = () => {
           </div>
         </div>
         <Footer />
+        <ToastContainer autoClose={2000} />
       </>
     )
   );
