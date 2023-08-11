@@ -1,6 +1,7 @@
 .btn-about{
     background-color: white;
     border: none;
+    cursor: pointer;
 }
 
 .about-product{
