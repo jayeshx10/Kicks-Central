@@ -15,7 +15,7 @@ export const WishlistCartContext = createContext();
 
 export const WishlistCartContextProvider = ({ children }) => {
   const { token } = useContext(AuthContext);
-  const { isWishedInCart, addFlag, removeFlag } = useContext(ProductsContext);
+  const {addFlag, removeFlag } = useContext(ProductsContext);
 
   const [wishlistData, setWishlistData] = useState([]);
   const [cartData, setCartData] = useState([]);

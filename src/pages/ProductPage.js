@@ -11,9 +11,15 @@ import "styles/productPage.css";
 export const ProductPage = () => {
   let { productID } = useParams();
   const { productsDB, addFlag } = useContext(ProductsContext);
-  const { addProduct } = useContext(WishlistCartContext);
+  const { addProduct, wishlistData, cartData } =
+    useContext(WishlistCartContext);
 
   const [showLoader, setShowLoader] = useState(true);
+
+  const wished =
+    wishlistData?.some((product) => product._id === productID) ?? false;
+  const carted =
+    cartData?.some((product) => product._id === productID) ?? false;
 
   useEffect(() => {
     setTimeout(() => {
@@ -48,7 +54,7 @@ export const ProductPage = () => {
               <p className="p-price">₹ {product.price}</p>
             </div>
             <div className="btns-product-page">
-              {product.isWished ? (
+              {wished ? (
                 <button className="btn-disabled" disabled>
                   Added to wishlist
                 </button>
@@ -61,7 +67,7 @@ export const ProductPage = () => {
                 </button>
               )}
               <br />
-              {product.inCart ? (
+              {carted ? (
                 <button className="btn-disabled" disabled>
                   Added to Cart
                 </button>

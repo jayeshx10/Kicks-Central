@@ -8,7 +8,7 @@ import { increaseQty, decreaseQty } from "Images/Icons";
 import { Footer } from "components/Footer";
 import { WishlistCartContext } from "contexts/WishlistCartContext";
 
-const CartProductCard = ({ item }) => {
+const CartProductCard = ({ item }) => { 
   const { removeProduct, moveProduct, handleQuantity } =
     useContext(WishlistCartContext);
 
