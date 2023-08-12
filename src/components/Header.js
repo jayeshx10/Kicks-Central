@@ -47,25 +47,72 @@ export const Header = () => {
       </div>
       <nav className="header__container-2">
         <Link to="/products" className="header__links">
-          <span className="header__span">All Products</span>
+          <button
+            className="btn-icons"
+            onClick={() => dispatch({ type: "singleCategoryFilter" })}
+          >
+            <span className="header__span">All Products</span>
+          </button>
         </Link>
-        <Link to="/products/sneakers" className="header__links">
-          <span className="header__span">Sneakers</span>
+        <Link to="/products" className="header__links">
+          <button
+            className="btn-icons"
+            onClick={() =>
+              dispatch({ type: "singleCategoryFilter", payload: "sneakers" })
+            }
+          >
+            <span className="header__span">Sneakers</span>
+          </button>
         </Link>
         <Link className="header__links">
-          <span className="header__span">Basketball</span>
+          <button
+            className="btn-icons"
+            onClick={() =>
+              dispatch({ type: "singleCategoryFilter", payload: "basketball" })
+            }
+          >
+            <span className="header__span">Basketball</span>
+          </button>
         </Link>
         <Link className="header__links">
-          <span className="header__span">Classics</span>
+          <button
+            className="btn-icons"
+            onClick={() =>
+              dispatch({ type: "singleCategoryFilter", payload: "classics" })
+            }
+          >
+            <span className="header__span">Classics</span>
+          </button>
         </Link>
         <Link className="header__links">
-          <span className="header__span">Skateboard</span>
+          <button
+            className="btn-icons"
+            onClick={() =>
+              dispatch({ type: "singleCategoryFilter", payload: "skateboard" })
+            }
+          >
+            <span className="header__span">Skateboard</span>
+          </button>
         </Link>
         <Link className="header__links">
-          <span className="header__span">Slides</span>
+          <button
+            className="btn-icons"
+            onClick={() =>
+              dispatch({ type: "singleCategoryFilter", payload: "slides" })
+            }
+          >
+            <span className="header__span">Slides</span>
+          </button>
         </Link>
         <Link className="header__links">
-          <span className="header__span">Sandals</span>
+          <button
+            className="btn-icons"
+            onClick={() =>
+              dispatch({ type: "singleCategoryFilter", payload: "sandals" })
+            }
+          >
+            <span className="header__span">Sandals</span>
+          </button>
         </Link>
       </nav>
     </div>

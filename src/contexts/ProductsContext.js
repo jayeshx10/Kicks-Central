@@ -42,6 +42,11 @@ export const ProductsContextProvider = ({ children }) => {
             ? state.categories.filter((item) => item !== action.payload)
             : [...state?.categories, action.payload],
         };
+      case "singleCategoryFilter":
+        return {
+          ...state,
+          categories: action.payload ? [action.payload] : [],
+        };
       case "clearFilters":
         return {
           ...state,
