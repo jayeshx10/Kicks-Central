@@ -1,11 +1,10 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { ProductsContext } from "contexts/ProductsContext";
 
 import "styles/sidebar.css";
 
 export const SideBar = () => {
-  const { productsDB, productsPostSorting, dispatch, filters, clearFilters } =
-    useContext(ProductsContext);
+  const { dispatch, filters } = useContext(ProductsContext);
 
   return (
     <div className="sidebar-div">
@@ -71,6 +70,10 @@ export const SideBar = () => {
               type="checkbox"
               className="checkbox-category"
               name="sneakers"
+              checked={filters.categories.includes("sneakers")}
+              onChange={(e) =>
+                dispatch({ type: "categories", payload: e.target.name })
+              }
             />
             Sneakers
           </label>
@@ -79,6 +82,10 @@ export const SideBar = () => {
               type="checkbox"
               className="checkbox-category"
               name="basketball"
+              checked={filters.categories.includes("basketball")}
+              onChange={(e) =>
+                dispatch({ type: "categories", payload: e.target.name })
+              }
             />
             Basketball
           </label>
@@ -87,6 +94,10 @@ export const SideBar = () => {
               type="checkbox"
               className="checkbox-category"
               name="classics"
+              checked={filters.categories.includes("classics")}
+              onChange={(e) =>
+                dispatch({ type: "categories", payload: e.target.name })
+              }
             />
             Classics
           </label>
@@ -95,6 +106,10 @@ export const SideBar = () => {
               type="checkbox"
               className="checkbox-category"
               name="skateboard"
+              checked={filters.categories.includes("skateboard")}
+              onChange={(e) =>
+                dispatch({ type: "categories", payload: e.target.name })
+              }
             />
             Skateboard
           </label>
@@ -103,6 +118,10 @@ export const SideBar = () => {
               type="checkbox"
               className="checkbox-category"
               name="slides"
+              checked={filters.categories.includes("slides")}
+              onChange={(e) =>
+                dispatch({ type: "categories", payload: e.target.name })
+              }
             />
             Slides
           </label>
@@ -111,6 +130,10 @@ export const SideBar = () => {
               type="checkbox"
               className="checkbox-category"
               name="sandals"
+              checked={filters.categories.includes("sandals")}
+              onChange={(e) =>
+                dispatch({ type: "categories", payload: e.target.name })
+              }
             />
             Sandals
           </label>

@@ -20,35 +20,11 @@ export const ProductsContextProvider = ({ children }) => {
     getData();
   }, []);
 
-  const addFlag = (type, product) => {
-    const { _id } = product;
-    const newData = productsDB.map((product) => {
-      return product._id === _id
-        ? type === "wishlist"
-          ? { ...product, isWished: true }
-          : { ...product, inCart: true }
-        : product;
-    });
-    setProductsDB(newData);
-  };
-
-  const removeFlag = (type, product) => {
-    const { _id } = product;
-    const newData = productsDB.map((product) => {
-      return product._id === _id
-        ? type === "wishlist"
-          ? { ...product, isWished: false }
-          : { ...product, inCart: false }
-        : product;
-    });
-    setProductsDB(newData);
-  };
-
   const initialFilterState = {
     searchedKeyword: "",
     rating: 2,
     sorting: "",
-    brands: [],
+    categories: [],
   };
 
   const filtersReducer = (state, action) => {
@@ -59,12 +35,19 @@ export const ProductsContextProvider = ({ children }) => {
         return { ...state, rating: action.payload };
       case "sorting":
         return { ...state, sorting: action.payload };
+      case "categories":
+        return {
+          ...state,
+          categories: state.categories.includes(action.payload)
+            ? state.categories.filter((item) => item !== action.payload)
+            : [...state?.categories, action.payload],
+        };
       case "clearFilters":
         return {
           ...state,
           rating: 2,
           sorting: "",
-          brands: [],
+          categories: [],
         };
       default:
         return state;
@@ -73,13 +56,22 @@ export const ProductsContextProvider = ({ children }) => {
 
   const [filters, dispatch] = useReducer(filtersReducer, initialFilterState);
 
+  const productsPostCategoriesFilter =
+    filters.categories.length > 0
+      ? productsDB?.filter((product) =>
+          filters?.categories.some(
+            (category) => category === product?.categoryName
+          )
+        )
+      : productsDB;
+
   const productsPostSearch = filters.searchedKeyword
-    ? productsDB.filter(
+    ? productsPostCategoriesFilter.filter(
         ({ name, brand }) =>
           name.toUpperCase().includes(filters.searchedKeyword) ||
           brand.toUpperCase().includes(filters.searchedKeyword)
       )
-    : productsDB;
+    : productsPostCategoriesFilter;
 
   const productsPostRating = filters.rating
     ? productsPostSearch.filter((product) => product.rating >= filters.rating)
@@ -95,8 +87,6 @@ export const ProductsContextProvider = ({ children }) => {
     <ProductsContext.Provider
       value={{
         productsDB,
-        addFlag,
-        removeFlag,
         productsPostSorting,
         dispatch,
         filters,

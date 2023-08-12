@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import { Navigate } from "react-router";
 import { ToastContainer } from "react-toastify";
 import { useContext, useState, useEffect } from "react";
 
@@ -15,7 +14,7 @@ import "styles/productPage.css";
 export const ProductPage = () => {
   let { productID } = useParams();
   const { token } = useContext(AuthContext);
-  const { productsDB, addFlag } = useContext(ProductsContext);
+  const { productsDB } = useContext(ProductsContext);
   const { addProduct, wishlistData, cartData } =
     useContext(WishlistCartContext);
 
