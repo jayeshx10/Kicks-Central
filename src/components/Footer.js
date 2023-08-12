@@ -1,5 +1,8 @@
 import React from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+
+import { AuthContext } from "contexts/AuthContext";
 
 import {
   FacebookIcon,
@@ -10,14 +13,17 @@ import {
 import "styles/footer.css";
 
 export const Footer = () => {
+  const { token } = useContext(AuthContext);
   return (
     <div className="footer">
-      <div className="footer__container-1">
-        <p>Join and Get 10% off</p>
-        <Link to="/signup">
-          <button>Sign Up</button>
-        </Link>
-      </div>
+      {!token && (
+        <div className="footer__container-1">
+          <p>Join and Get 10% off</p>
+          <Link to="/signup">
+            <button>Sign Up</button>
+          </Link>
+        </div>
+      )}
       <div className="footer__container-2">
         <ul className="ul primary-ul">
           <li>Find a store</li>

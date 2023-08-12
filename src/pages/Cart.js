@@ -8,7 +8,7 @@ import { increaseQty, decreaseQty } from "Images/Icons";
 import { Footer } from "components/Footer";
 import { WishlistCartContext } from "contexts/WishlistCartContext";
 
-const CartProductCard = ({ item }) => { 
+const CartProductCard = ({ item }) => {
   const { removeProduct, moveProduct, handleQuantity } =
     useContext(WishlistCartContext);
 
@@ -16,7 +16,9 @@ const CartProductCard = ({ item }) => {
 
   return (
     <>
-      <img src={imgUrl} alt={name} className="cart-card__img" />
+      <Link to={`/product/${_id}`}>
+        <img src={imgUrl} alt={name} className="cart-card__img" />
+      </Link>
       <div className="flex-col">
         <div>
           <div className="cart-card__li-text">
