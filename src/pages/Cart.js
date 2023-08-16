@@ -104,6 +104,9 @@ export const Cart = () => {
               </ul>
               <hr />
               <p className="checkout__total">TOTAL: ₹ {total}</p>
+              <Link>
+                <button className="btn-icons"></button>
+              </Link>
             </div>
           </>
         ) : (
