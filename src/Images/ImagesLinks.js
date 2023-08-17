@@ -2,7 +2,7 @@ export const kicksCentralIcon =
   "https://s3-alpha-sig.figma.com/img/7aca/68a1/220e5e8ed284afbe59f02f5d2806eb8e?Expires=1691971200&Signature=H0TMXwUbIc75N-C43hJ4uZZkiIJFj1HrP21MIcHy9ISoIsyf~GylJY9DLOYHgOiSj47lGsyjHo8WlU2TyWyXeYL-tQPyz3qCLFU6TZAEGWKO6Wz1k3copzW0x0xnLb5Yk9M0M-jvaFM-CT~Bic2Ukc0M2mg5x-C4fj8UsmWPaWvx7N6ti~nDLrl5d1EeZxI~N03Vy7f28qs~XH676Ywbq4fmqOam7VO62KBoMnF-pnr0S0HU4sJigTspyiHYosHJ5Vv2t00R9EyoinnLRT45vpQ46kzcxTt-65C1F-MZ-i88EV0kva-E5g1iJyFGCSJ08-YxtYyq3BRguCmTvdP3DA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4";
 
 export const newBalancePink =
-  "https://s3-alpha-sig.figma.com/img/8441/18df/b1556b8d0dafc7016387384ca6231054?Expires=1691971200&Signature=pTTNPR9GcxRZXUwiYNx1WFeWNGBmtMOzJD07fIZvV5MSc6McWmJ9iBeBm27Zv9FjQBdSVEZkgVOFJTSw6OpzTUuQIHwtpEewD~LArDdDzN600Yr9ArbBjnCuLrZ0ovpS8qcX1gLKKDK63YDdD90kV3OXyuurCug4Xu41kfvFN9p6FmneDKqGK67gPCdMLrpvw8BernVYEZai9oBqL~ZkGWnyVlIRkYUD7nUnY5r5CwD3cmJZzbyci-nl2z5tOEyeoD3QLMLO0kQzjJBplYMF5Ucc5iXvGJTtWtuXFG3uEkNDbXbffe8y-j33KZfxWhNDZa1Fn~TqaC~b3S6jRPsueA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4";
+  "https://res.cloudinary.com/dlvilwngl/image/upload/v1692254487/images/maksim-larin-ezdrvzA1hZw-unsplash_xxbsc1.jpg";
 
 export const pinkSkates =
   "https://s3-alpha-sig.figma.com/img/26d6/5c31/31f17e0fe32cb53873a185e6d12c96b3?Expires=1691971200&Signature=jAmAThP-6zvdARFBXnUAlf8NTP8q~IRmVqdBqPtPzezrQ2pMCCvPr-Eq0h-qkHYqeG8a2SI0JfXKFwWzlw4HoSVN9I5z1MZJcIgakyN4BkCnS5Fj2QpoLwYw7UN~hm1KgLfwwqFEzcYbCpQ5e98D8yy46M21H7Q-utK-66pa-WZhwH4~8sVfU90uTsqYu-AGWqTBXPd6iP4QKpqex9WX9EnWqFg-ibyJDRYAj15~CnNRI~a2cDyvYuGHyHlLJvsryxGPJY~KTw98EWrU66Ip2kYqWEUDboG5R6CIyhe5lu5MJu~nux-oUcWyGpgTZqxp~XfU~GbwG~inTbAQmYNoUQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4";
