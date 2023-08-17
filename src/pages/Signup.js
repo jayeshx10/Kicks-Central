@@ -1,4 +1,5 @@
 import React from "react";
+import { Navigate } from "react-router";
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
@@ -10,7 +11,7 @@ import { Footer } from "components/Footer";
 import { hidePassword, showPassword } from "Images/Icons";
 
 export const Signup = () => {
-  const { signupHandler } = useContext(AuthContext);
+  const { token, signupHandler } = useContext(AuthContext);
 
   const [passwordType, setPasswordType] = useState("password");
 
@@ -36,7 +37,7 @@ export const Signup = () => {
     }));
   };
 
-  const submitHandler = async (e) => {
+  const submitHandler = (e) => {
     e.preventDefault();
     if (signupDetails.password === signupDetails.confirmPassword) {
       signupHandler(signupDetails);
@@ -46,10 +47,12 @@ export const Signup = () => {
     }
   };
 
-  return (
+  return token ? (
+    <Navigate to="/products" />
+  ) : (
     <>
       <ToastContainer autoClose={2000} />
-      <form className="main-container" onSubmit={submitHandler}>
+      <form className="main-container" onSubmit={(e) => submitHandler(e)}>
         <h2 className="signup-h2">Sign Up</h2>
         <div className="input-name-container">
           <div>
@@ -104,6 +107,7 @@ export const Signup = () => {
             required
           />
           <button
+            type="button"
             className="inputs__button-icons"
             onClick={togglePasswordState}
           >
