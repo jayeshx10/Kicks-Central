@@ -64,7 +64,7 @@ export const Header = () => {
             <span className="header__span">Sneakers</span>
           </button>
         </Link>
-        <Link className="header__links">
+        <Link to="/products" className="header__links">
           <button
             className="btn-icons"
             onClick={() =>
@@ -74,7 +74,7 @@ export const Header = () => {
             <span className="header__span">Basketball</span>
           </button>
         </Link>
-        <Link className="header__links">
+        <Link to="/products" className="header__links">
           <button
             className="btn-icons"
             onClick={() =>
@@ -84,7 +84,7 @@ export const Header = () => {
             <span className="header__span">Classics</span>
           </button>
         </Link>
-        <Link className="header__links">
+        <Link to="/products" className="header__links">
           <button
             className="btn-icons"
             onClick={() =>
@@ -94,7 +94,7 @@ export const Header = () => {
             <span className="header__span">Skateboard</span>
           </button>
         </Link>
-        <Link className="header__links">
+        <Link to="/products" className="header__links">
           <button
             className="btn-icons"
             onClick={() =>
@@ -104,7 +104,7 @@ export const Header = () => {
             <span className="header__span">Slides</span>
           </button>
         </Link>
-        <Link className="header__links">
+        <Link to="/products" className="header__links">
           <button
             className="btn-icons"
             onClick={() =>
