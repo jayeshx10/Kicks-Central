@@ -50,7 +50,11 @@ export const ProductPage = () => {
       <>
         <div className="productPage-main-container">
           <div className="productPage-div-left">
-            <img src={product.imgUrl} alt="Shoes" />
+            <img
+              src={product.imgUrl}
+              alt="Shoes"
+              className="productPage--img"
+            />
           </div>
           <div className="productPage-div-right">
             <div>

@@ -14,6 +14,8 @@ import {
   infinityWalk,
   styleSprint,
   swiftStrike,
+  chicCollection,
+  versatileCollection,
   velocityX,
   flexStride,
   aeroTech,
@@ -111,7 +113,7 @@ export const Home = () => {
       <div className="home__try-trending">
         <div className="flex-col">
           <div className="collection-card__small">
-            <img src={pinkSkates} alt="Shoes" />
+            <img src={skateboardShoes} alt="Shoes" />
             <p className="card__title">Urban</p>
             <p className="card__type">Women's collection</p>
             <Link to="/products">
@@ -119,7 +121,7 @@ export const Home = () => {
             </Link>
           </div>
           <div className="collection-card__small">
-            <img src={pinkSkates} alt="Shoes" />
+            <img src={chicCollection} alt="Shoes" />
             <p className="card__title">Chic</p>
             <p className="card__type">Unisex collection</p>
             <Link to="/products">
@@ -128,7 +130,7 @@ export const Home = () => {
           </div>
         </div>
         <div className="collection-card__big">
-          <img src={pinkSkates} alt="Shoes" />
+          <img src={versatileCollection} alt="Shoes" />
           <p className="card__title">Versatile</p>
           <p className="card__type">Men's collection</p>
           <Link to="/products">
