@@ -1,35 +1,40 @@
 .main-container {
     border: 2px solid black;
-    width: 25%;
+    width: 350px;
     margin: 30px auto;
-    padding: 20px;
+    padding: 20px 20px 20px 30px;
     display: flex;
     flex-direction: column;
+    box-shadow: 5.0px 10.1px 10.1px hsl(0deg 0% 0% / 0.34);
 }
 
 .signup-h2 {
     text-align: center;
-    margin: 0.5rem auto;
+    margin: 10px auto;
 }
 
 .labels { 
     font-size: 18px;
     font-weight: 600;
-    margin: 0.3rem 0;
-    width: 100%;
+    margin-top: 10px;
+    position: relative;
 }
 
 .inputs {
-    height: 30px;
-    width: 100%;
-    padding: 0 0 0 5px;
-    margin: auto;
+    height: 35px;
+    width: 320px;
     border: 2px solid black;
+    margin-top: 10px;
+}
+
+.inputs__name{
+    width: 150px !important;
 }
 
 .input-name-container{
+    width: 330px;
     display: flex;
-    gap: 25px;
+    justify-content: space-between;
 }
 
 .btn-new-acc {
@@ -39,8 +44,8 @@
     color: white;
     padding: 0.5rem;
     height: 40px;
-    width: 97%;
-    margin: 10px 0;
+    width: 330px;
+    margin-bottom: 10px;
     cursor: pointer;
     transition-duration: 400ms;
 }

@@ -60,6 +60,7 @@ export const LoginPage = () => {
     <>
       <form className="form-container" onSubmit={submitHandler}>
         <h2 className="login-page-h2">Sign In</h2>
+
         <label className="labels" htmlFor="email">
           Email Address:{" "}
           <input
@@ -73,7 +74,7 @@ export const LoginPage = () => {
                 email: e.target.value,
               }))
             }
-            placeholder="shawn@gmail.com"
+            placeholder="  shawn@gmail.com"
             required
           />
         </label>
@@ -90,7 +91,7 @@ export const LoginPage = () => {
                 password: e.target.value,
               }))
             }
-            placeholder="•••••••••"
+            placeholder="  •••••••••"
             required
           />
           <button

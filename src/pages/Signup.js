@@ -61,7 +61,7 @@ export const Signup = () => {
               className="inputs inputs__name"
               type="text"
               name="firstName"
-              placeholder="Shawn"
+              placeholder="  Shawn"
               onChange={changeHandler}
               required
             />
@@ -75,7 +75,7 @@ export const Signup = () => {
               className="inputs inputs__name"
               type="text"
               name="lastName"
-              placeholder="Pattins"
+              placeholder="  Pattins"
               onChange={changeHandler}
               required
             />
@@ -87,7 +87,7 @@ export const Signup = () => {
             className="inputs"
             type="text"
             name="email"
-            placeholder="shawn@gmail.com"
+            placeholder="  shawn@gmail.com"
             onChange={changeHandler}
             required
           />
@@ -98,7 +98,7 @@ export const Signup = () => {
             className="inputs"
             type={passwordType}
             name="password"
-            placeholder="••••••••••••"
+            placeholder="  ••••••••••••"
             minLength="8"
             onChange={changeHandler}
             required
@@ -120,12 +120,13 @@ export const Signup = () => {
             className="inputs"
             type={passwordType}
             name="confirmPassword"
-            placeholder="••••••••••••"
+            placeholder="  ••••••••••••"
             minLength="8"
             onChange={changeHandler}
             required
           />
         </label>
+        <br />
         <button type="submit" className="btn-new-acc">
           CREATE NEW ACCOUNT
         </button>
