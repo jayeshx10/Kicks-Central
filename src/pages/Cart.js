@@ -15,7 +15,7 @@ const CartProductCard = ({ item }) => {
   const { _id, name, brand, imgUrl, price, qty } = item;
 
   return (
-    <>
+    <li className="cart__li" key={_id}>
       <Link to={`/product/${_id}`}>
         <img src={imgUrl} alt={name} className="cart-card__img" />
       </Link>
@@ -37,7 +37,7 @@ const CartProductCard = ({ item }) => {
                 className="cart-card__qty-icons"
               />
             </button>
-            {`  ${qty}  `}
+            <p>{`  ${qty}  `}</p>
             <button
               onClick={() => handleQuantity("decrement", _id)}
               disabled={qty === 1}
@@ -65,7 +65,7 @@ const CartProductCard = ({ item }) => {
           </button>
         </div>
       </div>
-    </>
+    </li>
   );
 };
 
@@ -79,11 +79,7 @@ export const Cart = () => {
           <ul className="cart__ul">
             {cartData.map((item) => {
               const { _id } = item;
-              return (
-                <li className="cart__li" key={_id}>
-                  <CartProductCard item={item} />
-                </li>
-              );
+              return <CartProductCard item={item} key={_id} />;
             })}
           </ul>
           <hr />
