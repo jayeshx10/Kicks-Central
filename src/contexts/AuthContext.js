@@ -33,7 +33,7 @@ export const AuthContextProvider = ({ children }) => {
         }
       }
     } catch (error) {
-      console.log("error", error.response.data.errors);
+      console.log("error", error.response.data);
       toastifyMessageService("error", error.response.data.errors);
     }
   };
