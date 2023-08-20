@@ -11,6 +11,8 @@ import { Cart } from "pages/Cart";
 import { Wishlist } from "pages/Wishlist";
 import { ProductPage } from "pages/ProductPage";
 import ProductsListingPage from "pages/ProductsListingPage";
+import { Checkout } from "pages/Checkout.js";
+import { OrderPlaced } from "pages/OrderPlaced";
 import { Home } from "pages/Home";
 
 export const AllRoutes = () => {
@@ -24,6 +26,8 @@ export const AllRoutes = () => {
         <Route path="/product/:productID" element={<ProductPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/order-placed" element={<OrderPlaced />} />
         <Route
           path="/wishlist"
           element={

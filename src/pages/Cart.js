@@ -74,50 +74,47 @@ export const Cart = () => {
 
   return (
     <>
-      <div className="cart__container">
-        {cartData.length >= 1 ? (
-          <>
-            <ul className="cart__ul">
+      {cartData.length >= 1 ? (
+        <div className="cart__container">
+          <ul className="cart__ul">
+            {cartData.map((item) => {
+              const { _id } = item;
+              return (
+                <li className="cart__li" key={_id}>
+                  <CartProductCard item={item} />
+                </li>
+              );
+            })}
+          </ul>
+          <hr />
+          <div className="cart__checkout">
+            <ul className="cart__checkout__ul">
               {cartData.map((item) => {
-                const { _id } = item;
+                const { _id, name, price, qty } = item;
+
                 return (
-                  <li className="cart__li" key={_id}>
-                    <CartProductCard item={item} />
+                  <li className="cart__checkout__li" key={_id}>
+                    <p>{name}</p>
+                    <p>x{qty}</p>
+                    <p>₹{price}</p>
                   </li>
                 );
               })}
             </ul>
-            <hr />
-            <div className="checkout">
-              <ul className="checkout__ul">
-                {cartData.map((item) => {
-                  const { _id, name, price, qty } = item;
-
-                  return (
-                    <li className="checkout__li" key={_id}>
-                      <p>{name}</p>
-                      <p>x{qty}</p>
-                      <p>₹{price}</p>
-                    </li>
-                  );
-                })}
-              </ul>
-              <hr />
-              <p className="checkout__total">TOTAL: ₹ {total}</p>
-              <Link>
-                <button className="btn-icons"></button>
-              </Link>
-            </div>
-          </>
-        ) : (
-          <div className="cart__empty">
-            <h1>Nothing in your Cart :/</h1>
-            <Link to="/products">
-              <button className="empty-cart__btn">Start Shopping</button>
+            <p className="cart__checkout__total">TOTAL: ₹ {total}</p>
+            <Link to="/checkout">
+              <button className="cart__checkout__btn">Checkout</button>
             </Link>
           </div>
-        )}
-      </div>
+        </div>
+      ) : (
+        <div className="cart__empty">
+          <h1>Nothing in your Cart :/</h1>
+          <Link to="/products">
+            <button className="empty-cart__btn">Start Shopping</button>
+          </Link>
+        </div>
+      )}
       <Footer />
       <ToastContainer />
     </>

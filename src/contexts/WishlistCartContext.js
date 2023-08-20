@@ -149,6 +149,7 @@ export const WishlistCartContextProvider = ({ children }) => {
       value={{
         wishlistData,
         cartData,
+        setCartData,
         addProduct,
         removeProduct,
         moveProduct,
