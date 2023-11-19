@@ -56,7 +56,7 @@ export const Signup = () => {
         <h2 className="signup-h2">Sign Up</h2>
         <div className="input-name-container">
           <div>
-            <label className="labels" for="name">
+            <label className="labels" htmlFor="name">
               First Name:{" "}
             </label>
             <br />
@@ -70,7 +70,7 @@ export const Signup = () => {
             />
           </div>
           <div>
-            <label className="labels" for="name">
+            <label className="labels" htmlFor="name">
               Last Name:{" "}
             </label>
             <br />
@@ -84,7 +84,7 @@ export const Signup = () => {
             />
           </div>
         </div>
-        <label className="labels" for="email">
+        <label className="labels" htmlFor="email">
           Email Address:{" "}
           <input
             className="inputs"
@@ -95,7 +95,7 @@ export const Signup = () => {
             required
           />
         </label>
-        <label className="labels" for="password">
+        <label className="labels" htmlFor="password">
           Password (8 characters minimum):
           <input
             className="inputs"
@@ -118,7 +118,7 @@ export const Signup = () => {
             />
           </button>
         </label>
-        <label className="labels" for="cnf-password">
+        <label className="labels" htmlFor="cnf-password">
           Confirm Password:{" "}
           <input
             className="inputs"

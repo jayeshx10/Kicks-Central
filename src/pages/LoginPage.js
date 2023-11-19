@@ -34,7 +34,6 @@ export const LoginPage = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log("login clicked");
     loginHandler(userCredentials);
   };
 

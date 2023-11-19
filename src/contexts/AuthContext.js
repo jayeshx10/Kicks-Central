@@ -33,8 +33,9 @@ export const AuthContextProvider = ({ children }) => {
         }
       }
     } catch (error) {
-      console.log("error", error.response.data);
-      toastifyMessageService("error", error.response.data.errors);
+      const { response: { data: {errors}} } = error;
+      const errorMsg = errors[0];
+      toastifyMessageService("error", errorMsg);
     }
   };
 
@@ -53,7 +54,6 @@ export const AuthContextProvider = ({ children }) => {
         );
         setToken(encodedToken);
         setCurrUser(createdUser);
-        console.log("signup", createdUser);
       }
     } catch (error) {
       console.log(error);
